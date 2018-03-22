@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>shangcheng</display-name>
+  <!-- web.xml文件中welcome-file-list双标签里写一个welcome-file双标签内写xxx.jsp代表打开这个项目首先会跳到xxx.jsp对应的页面,但路径是http://localhost:8080/项目名/ -->
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+  <!-- 读取任何spring.xml文件 -->
+  	 <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>
+			classpath*:/applicationContext.xml
+		</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <!-- 配置srpingmvc -->
+   <servlet>
+    <servlet-name>springmvc</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>/WEB-INF/spring-mvc.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>springmvc</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <!-- 配置过滤器(过滤乱码) -->
+  <filter>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>utf-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>openSessionInView</filter-name>
+    <filter-class>org.springframework.orm.hibernate5.support.OpenSessionInViewFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>openSessionInView</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <!-- 如果是404页面， 转换成显示404.jsp文件页面-->
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/404.jsp</location>
+  </error-page>
+</web-app>
