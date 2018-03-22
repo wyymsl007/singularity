@@ -12,7 +12,7 @@
 		<input type = "text"  name = "adminName"/>
 		<input type = "password" name = "password"/>
 		<input type = "submit" value = "登陆">
-		1111111
+		111111122222
 	</form>
 </body>
 </html>
