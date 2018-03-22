@@ -23,7 +23,7 @@ public class AdminServiceImpl {
 	public boolean CheckLogin(String adminName, String password) {
 		List<Admin> list = this.adminDaoImpl.getAllAdmins();
 		for(int i = 0; i < list.size(); i++) {
-			if(((Admin)list.get(i)).getName() == adminName && ((Admin)list.get(i)).getPassword() == password) {
+			if(((Admin)list.get(i)).getName().equals(adminName) && ((Admin)list.get(i)).getPassword().equalsIgnoreCase(password)) {
 				return true;
 			}
 		}
