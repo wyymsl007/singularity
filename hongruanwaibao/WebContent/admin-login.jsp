@@ -7,12 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>管理员后台登录窗口：</h1>
-	<form action = "${pageContext.request.contextPath }/Admin/checkLogin">
-		<input type = "text"  name = "adminName"/>
-		<input type = "password" name = "password"/>
+	<h1>管理员登录窗口</h1>
+	<form action = "${pageContext.request.contextPath}/admin-index.jsp">
+		用户名：<input type = "text" name = "adminName">
+		密码：<input type = "password" name = "password">
 		<input type = "submit" value = "登陆">
-		1111111222223333333444444555555
 	</form>
 </body>
 </html>
