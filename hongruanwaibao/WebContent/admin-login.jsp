@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>管理员后台登录窗口：</h1>
-	<form action = "${pageContext.request.contextPath }/Admin/checkLogin">
+	<form action = "${pageContext.request.contextPath }/Admin/checkLogin.do">
 		<input type = "text"  name = "adminName"/>
 		<input type = "password" name = "password"/>
 		<input type = "submit" value = "登陆">
