@@ -52,8 +52,8 @@
       <li class="admin-parent">
         <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}"><span class="am-icon-file"></span> 任务管理 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
         <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
-          <li><a href="admin-task.html" class="am-cf"><span class="am-icon-check"></span> 发布任务<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
-          <li><a href="admin-find.html"><span class="am-icon-puzzle-piece"></span> 查找任务</a></li>
+          <li><a href="${pageContext.request.contextPath}/admin-publishTask.jsp" class="am-cf"><span class="am-icon-check"></span> 发布任务<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
+         <li><a href="${pageContext.request.contextPath}/admin-searchTask.jsp"><span class="am-icon-puzzle-piece"></span> 查找任务</a></li>
         </ul>
       </li>
       <li><a href="###########"><span class="am-icon-table"></span>用户管理</a></li>
@@ -62,8 +62,8 @@
         <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
         	<%-- ${pageContext.request.contextPath}的返回值就是localhost:8080/项目名(可字符串也可不字符串) --%>
           <li><a href="${pageContext.request.contextPath}/User/showNewUsers.do" class="am-cf"><span class="am-icon-check"></span> 新用户审核<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
-          <li><a href="admin-bit.html"><span class="am-icon-puzzle-piece"></span> 竞标审核</a></li>
-          <li><a href="admin-result.html"><span class="am-icon-bug"></span> 任务结果审核</a></li>
+         <li><a href="${pageContext.request.contextPath}/admin-bit.jsp"><span class="am-icon-puzzle-piece"></span> 竞标审核</a></li>
+           <li><a href="${pageContext.request.contextPath}/admin-taskResult.jsp"><span class="am-icon-bug"></span> 任务结果审核</a></li>
         </ul>
       </li>
     </ul>
