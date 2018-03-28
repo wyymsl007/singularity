@@ -12,11 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <link rel="icon" type="image/png" href="assets/i/favicon.png">
-  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+  <link rel="icon" type="image/png" href="${pageContext.request.contextPath}/static/css/assets/i/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="${pageContext.request.contextPath}/static/css/assets/i/app-icon72x72@2x.png">
   <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-  <link rel="stylesheet" href="assets/css/ui.min.css"/>
-  <link rel="stylesheet" href="assets/css/admin.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/assets/css/ui.min.css"/>
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/assets/css/admin.css" />
 </head>
 <body>
 <header class="am-topbar admin-header">
@@ -46,23 +46,23 @@
 
 <div class="am-cf admin-main">
   <!-- sidebar start -->
-   <div class="admin-sidebar">
+  <div class="admin-sidebar">
     <ul class="am-list admin-sidebar-list">
-      <li><a href="admin-index.html"><span class="am-icon-home"></span> 首页</a></li>
+      <li><a href="${pageContext.request.contextPath}/admin-index.jsp"><span class="am-icon-home"></span> 首页</a></li>
       <li class="admin-parent">
         <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}"><span class="am-icon-file"></span> 任务管理 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
         <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
-          <li><a href="admin-task.html" class="am-cf"><span class="am-icon-check"></span> 发布任务<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
-          <li><a href="admin-find.html"><span class="am-icon-puzzle-piece"></span> 查找任务</a></li>
+          <li><a href="${pageContext.request.contextPath}/admin-publishTask.jsp" class="am-cf"><span class="am-icon-check"></span> 发布任务<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
+          <li><a href="${pageContext.request.contextPath}/admin-searchTask.jsp"><span class="am-icon-puzzle-piece"></span> 查找任务</a></li>
         </ul>
       </li>
       <li><a href="###########"><span class="am-icon-table"></span>用户管理</a></li>
       <li class="admin-parent">
         <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}"><span class="am-icon-file"></span> 审核通知 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
         <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
-          <li><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span> 新用户审核<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
-          <li><a href="admin-bit.html"><span class="am-icon-puzzle-piece"></span> 竞标审核</a></li>
-          <li><a href="admin-result.html"><span class="am-icon-bug"></span> 任务结果审核</a></li>
+          <li><a href="${pageContext.request.contextPath}/User/showNewUsers.do" class="am-cf"><span class="am-icon-check"></span> 新用户审核<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
+          <li><a href="${pageContext.request.contextPath}/admin-bit.jsp"><span class="am-icon-puzzle-piece"></span> 竞标审核</a></li>
+          <li><a href="${pageContext.request.contextPath}/admin-taskResult.jsp"><span class="am-icon-bug"></span> 任务结果审核</a></li>
         </ul>
       </li>
     </ul>
