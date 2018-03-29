@@ -1,9 +1,14 @@
 package com.hongruan.online.entity;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +23,14 @@ public class User {
 	private String alipayName;
 	private String personalIntroduction;
 	private boolean isRegist;
+	private Set taskCompletedSet = new HashSet<TaskCompleted>();
+	@OneToMany(mappedBy = "user",targetEntity = TaskCompleted.class)
+	public Set getTaskCompletedSet() {
+		return taskCompletedSet;
+	}
+	public void setTaskCompletedSet(Set taskCompletedSet) {
+		this.taskCompletedSet = taskCompletedSet;
+	}
 	public boolean isRegist() {
 		return isRegist;
 	}

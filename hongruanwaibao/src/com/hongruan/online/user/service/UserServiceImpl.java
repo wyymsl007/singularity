@@ -26,4 +26,7 @@ public class UserServiceImpl {
 	public void userSureRegist(Integer userId) {
 		this.userDaoImpl.updateUserRegist(userId,true);
 	}
+	public void aaa() {
+		this.userDaoImpl.aaa();
+	}
 }
