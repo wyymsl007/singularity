@@ -8,6 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -23,13 +26,17 @@ public class User {
 	private String alipayName;
 	private String personalIntroduction;
 	private boolean isRegist;
-	private Set taskCompletedSet = new HashSet<TaskCompleted>();
-	@OneToMany(mappedBy = "user",targetEntity = TaskCompleted.class)
-	public Set getTaskCompletedSet() {
-		return taskCompletedSet;
+	private Set taskSet = new HashSet();
+	
+    @ManyToMany
+    @JoinTable(name="usertask", 
+        joinColumns=@JoinColumn(name="userId"),
+        inverseJoinColumns=@JoinColumn(name="taskid"))
+	public Set getTaskSet() {
+		return taskSet;
 	}
-	public void setTaskCompletedSet(Set taskCompletedSet) {
-		this.taskCompletedSet = taskCompletedSet;
+	public void setTaskSet(Set taskSet) {
+		this.taskSet = taskSet;
 	}
 	public boolean isRegist() {
 		return isRegist;

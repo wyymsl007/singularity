@@ -5,8 +5,8 @@
 	<head>
 		<title>首页</title>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/static/前端/css/style.css" />
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/static/前端/css/index.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/static/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/static/css/index.css" />
 	</head>
 	<body>
 	<div id="mybody">
