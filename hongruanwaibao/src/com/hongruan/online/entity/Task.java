@@ -1,17 +1,13 @@
 package com.hongruan.online.entity;
 
-import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="task")
-@Inheritance(strategy=InheritanceType.JOINED)
+@Table(name = "task")
 public class Task {
 	private Integer taskId;
 	private String taskName;
@@ -19,14 +15,7 @@ public class Task {
 	private String taskCondition;
 	private String taskAdmin;
 	private String taskStartTime;
-	private String taskEndTime;
-	private String taskPay;
-	public String getTaskPay() {
-		return taskPay;
-	}
-	public void setTaskPay(String taskPay) {
-		this.taskPay = taskPay;
-	}
+	private String taskEndtTime;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getTaskId() {
@@ -65,12 +54,11 @@ public class Task {
 	public void setTaskStartTime(String taskStartTime) {
 		this.taskStartTime = taskStartTime;
 	}
-	public String getTaskEndTime() {
-		return taskEndTime;
+	public String getTaskEndtTime() {
+		return taskEndtTime;
 	}
-	public void setTaskEndTime(String taskEndTime) {
-		this.taskEndTime = taskEndTime;
+	public void setTaskEndtTime(String taskEndtTime) {
+		this.taskEndtTime = taskEndtTime;
 	}
-
 	
 }

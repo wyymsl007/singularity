@@ -49,8 +49,4 @@ public class UserController {
 		this.userServiceImpl.userSureRegist(userId);
 		return "redirect:/User/showNewUsers.do";
 	}
-	@RequestMapping("/aaa")
-	public void aaa() {
-		this.userServiceImpl.aaa();
-	}
 }
