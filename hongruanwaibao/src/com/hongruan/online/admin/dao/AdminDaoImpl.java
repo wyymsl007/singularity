@@ -9,7 +9,6 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
 import com.hongruan.online.entity.Admin;
-import com.hongruan.online.entity.TaskBit;
 
 @Repository
 public class AdminDaoImpl {
@@ -19,9 +18,6 @@ public class AdminDaoImpl {
 		String hql = "from Admin";
 		Query query = this.sessionFactory.getCurrentSession().createQuery(hql);
 		return query.list();
-	}
-	public void saveTask(TaskBit taskBit) {
-		this.sessionFactory.getCurrentSession().save(taskBit);
 	}
 	
 }
