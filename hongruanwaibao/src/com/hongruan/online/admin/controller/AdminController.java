@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hongruan.online.admin.service.AdminServiceImpl;
+import com.hongruan.online.entity.TaskBit;
 
 @Controller
 @RequestMapping("/Admin")
@@ -22,5 +23,16 @@ public class AdminController {
 			return "admin-login";
 		}
 		
-	}	
+	}
+	@RequestMapping("/publishTask")
+	public void publishTask(@RequestParam String money, @RequestParam String taskStartTime, @RequestParam String taskEndTime,@RequestParam String taskAdmin,@RequestParam String taskIntroduce) {
+		TaskBit taskBit = new TaskBit();
+		taskBit.setTaskPay(money);
+		taskBit.setTaskAdmin(taskAdmin);
+		taskBit.setTaskEndTime(taskEndTime);
+		taskBit.setTaskIntroduce(taskIntroduce);
+		taskBit.setTaskStartTime(taskStartTime);
+		this.adminServiceImpl.publishTask(taskBit);
+		
+	}
 }
