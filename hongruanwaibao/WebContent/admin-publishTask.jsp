@@ -117,7 +117,7 @@
       </div>
 
       <div class="am-u-sm-12 am-u-md-8 am-u-md-pull-4">
-        <form class="am-form am-form-horizontal">
+        <form class="am-form am-form-horizontal" method = "post" action = "${pageContext.request.contextPath }/Admin/publishTask.do">
           <div class="am-form-group">
             <label for="user-name" class="am-u-sm-3 am-form-label">任务类型/ Task </label>
             <div class="am-u-sm-9">
@@ -135,9 +135,9 @@
           </div>
 
           <div class="am-form-group">
-            <label for="user-email" class="am-u-sm-3 am-form-label">佣金设置/ Commission</label>
+            <label for="user-email" class="am-u-sm-3 am-form-label" >佣金设置/ Commission</label>
             <div class="am-u-sm-9">
-              <input type="email" id="user-email" placeholder="输入您的佣金 / Commission">
+              <input type="text" name = "money" id="user-email" placeholder="输入您的佣金 / Commission">
               <small>您希望的价格...</small>
             </div>
           </div>
@@ -145,14 +145,14 @@
           <div class="am-form-group">
             <label for="user-phone" class="am-u-sm-3 am-form-label">发布时间/Release time</label>
             <div class="am-u-sm-9">
-              <input type="email" id="user-QQ" placeholder="输入你的开始时间">
+              <input name = "taskStartTime" type="text" id="user-QQ" placeholder="输入你的开始时间">
             </div>
           </div>
 
           <div class="am-form-group">
             <label for="user-QQ" class="am-u-sm-3 am-form-label">截止时间/End time</label>
             <div class="am-u-sm-9">
-              <input type="email" id="user-QQ" placeholder="输入你的截止时间">
+              <input name = "taskEndTime" type="text" id="user-QQ" placeholder="输入你的截止时间">
             </div>
           </div>
 
@@ -160,14 +160,14 @@
             <label for="user-weibo" class="am-u-sm-3 am-form-label">发布者/ Promulgator
 </label>
             <div class="am-u-sm-9">
-              <input type="email" id="user-weibo" placeholder="输入你的名字 / Promulgator">
+              <input name = "taskAdmin" type="text" id="user-weibo" placeholder="输入你的名字 / Promulgator">
             </div>
           </div>
 
           <div class="am-form-group">
             <label for="user-intro" class="am-u-sm-3 am-form-label">任务内容 / Intro</label>
             <div class="am-u-sm-9">
-              <textarea class="" rows="5" id="user-intro" placeholder="输入你的任务内容"></textarea>
+              <textarea  name = "taskIntroduce" class="" rows="5" id="user-intro" placeholder="输入你的任务内容"></textarea>
               <small>请保证在250字以内哦</small>
             </div>
           </div>
@@ -177,7 +177,7 @@
 
               <input type="file" name="files"/><br/>
 
-              <button type="button" class="am-btn am-btn-primary">确定提交</button>
+              <input  type="submit" class="am-btn am-btn-primary" value = "确定提交"  />
             </div>
           </div>
         </form>

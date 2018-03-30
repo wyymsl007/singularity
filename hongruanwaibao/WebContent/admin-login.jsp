@@ -13,5 +13,13 @@
 		密码：<input type = "password" name = "password">
 		<input type = "submit" value = "登陆">
 	</form>
+			<script type="text/javascript">
+	//window.location.href(可以通过?参数名=参数值传参，可以使用刀乐{}获取本页面的非js代码的变量值)可以与button并用跳转传参
+	function aaa(){
+		window.location.href = "${pageContext.request.contextPath}/User/aaa.do"
+		
+	}
+</script>
+			<button value = "111" onclick = "aaa()">
 </body>
 </html>
