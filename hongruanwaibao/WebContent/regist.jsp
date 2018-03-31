@@ -5,7 +5,7 @@
 	<head>
 		<title>首页</title>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="static/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="static/css/style2.css" />
 		<link rel="stylesheet" type="text/css" href="static/css/index.css" />
 		<script type="text/javascript" src="static/js/jquery-1.11.1.min.js"></script>
 		<script type="text/javascript">

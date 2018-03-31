@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.hongruan.online.entity.Admin;
 import com.hongruan.online.entity.User;
 import com.hongruan.online.user.dao.UserDaoImpl;
 
@@ -25,5 +26,14 @@ public class UserServiceImpl {
 	}
 	public void userSureRegist(Integer userId) {
 		this.userDaoImpl.updateUserRegist(userId,true);
+	}
+	public boolean CheckLogin(String userName, String password) {
+		List<User> list = this.userDaoImpl.getAllUsers();
+		for(int i = 0; i < list.size(); i++) {
+			if(((User)list.get(i)).getUserName().equals(userName) && ((User)list.get(i)).getPassword().equalsIgnoreCase(password)) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

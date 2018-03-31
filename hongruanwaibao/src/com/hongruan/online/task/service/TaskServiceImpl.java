@@ -20,4 +20,8 @@ public class TaskServiceImpl {
 	public List<Task> getTaskHallAllTasksList(){
 		return this.taskDaoImpl.getTaskHallAllTasksList();
 	}
+	public int getSumOfUsersAssociatedWithTask(Task task) {
+		int sumOfUsersAssociatedWithTask = task.getUserSet().size();
+		return sumOfUsersAssociatedWithTask;
+	}
 }

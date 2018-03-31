@@ -8,6 +8,7 @@ import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
+import com.hongruan.online.entity.Admin;
 import com.hongruan.online.entity.User;
 
 
@@ -30,5 +31,10 @@ public class UserDaoImpl {
 		query.setParameter(0,newValue);
 		query.setParameter(1,userId);//query.setParameter(n,变量名);代表将前面sql字符串中第n+1个问号换成这个变量名对应变量存储的值
 		int m = query.executeUpdate();
-	} 
+	}
+	public List<User> getAllUsers(){
+		String hql = "from User where regist = true";
+		Query query = this.sessionFactory.getCurrentSession().createQuery(hql);
+		return query.list();
+	}
 }

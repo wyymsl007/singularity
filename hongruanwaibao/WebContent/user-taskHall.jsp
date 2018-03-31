@@ -109,6 +109,7 @@
 					<td>任务发布者</td>
 					<td>任务开始时间</td>
 					<td>任务结束时间</td>
+					<td>任务酬劳</td>
 					<td>任务介绍</td>
 				</tr>
 				<c:forEach var = "i" varStatus = "v"  items = "${allTasksList }"  begin = "0" end = "${allTasksList.size()-1 }">
@@ -119,15 +120,16 @@
 						<td>${i.taskAdmin }</td>
 						<td>${i.taskStartTime }</td>
 						<td>${i.taskEndTime }</td>
-						<td>${i.taskPay }</td>
+						<td>${i.taskPay }元</td>
 						<td>${i.taskIntroduce }</td>
+						<td><font size = "50px"><a href = "${pageContext.request.contextPath }/Task/getTaskDetial.do?taskId=${i.taskId }&taskName=${i.taskName }&taskCondition=${i.taskCondition}&taskAdmin=${i.taskAdmin }&taskStartTime=${i.taskStartTime }&taskEndTime=${i.taskEndTime }&taskPay=${i.taskPay }&taskIntroduce=${i.taskIntroduce }">查看详情</a></font></td>
 					</tr>
 				</c:forEach>
 			</table>
 		</div>
 		<!--网页主体部分-->
 	<div id="content">
-		    
+		    	
 	</div>
 		<!--网页尾部-->
 	<div id="footer">

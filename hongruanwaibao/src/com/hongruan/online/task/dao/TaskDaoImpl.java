@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.hongruan.online.entity.Task;
+import com.hongruan.online.entity.User;
 
 @Repository
 public class TaskDaoImpl {
