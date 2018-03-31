@@ -5,8 +5,8 @@
 	<head>
 		<title>首页</title>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/static/前端/css/style.css" />
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/static/前端/css/index.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/static/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/static/css/index.css" />
 	</head>
 	<body>
 	<div id="mybody">
@@ -23,7 +23,7 @@
 				<div class="content">
 					<ul>
 						<li><a href="index.html">首页</a></li>
-						<li><a href="${pageContext.request.contextPath }/user-taskHall.jsp">任务大厅</a></li>
+						<li><a href="${pageContext.request.contextPath }/Task/getTaskHallAllTasksList.do">任务大厅</a></li>
 						<li><a href="list.html">任务流程介绍</a></li>
 					</ul>
 				</div>

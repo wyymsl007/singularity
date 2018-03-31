@@ -8,18 +8,14 @@
 </head>
 <body>
 	<h1>管理员登录窗口</h1>
-	<form action = "${pageContext.request.contextPath}/admin-index.jsp">
+	<form action = "${pageContext.request.contextPath}/Admin/checkLogin.do">
 		用户名：<input type = "text" name = "adminName">
 		密码：<input type = "password" name = "password">
-		<input type = "submit" value = "登陆">
+		<input type = "submit" value = "登陆">                            
 	</form>
-			<script type="text/javascript">
-	//window.location.href(可以通过?参数名=参数值传参，可以使用刀乐{}获取本页面的非js代码的变量值)可以与button并用跳转传参
-	function aaa(){
-		window.location.href = "${pageContext.request.contextPath}/User/aaa.do"
-		
-	}
-</script>
-			<button value = "111" onclick = "aaa()">
+				
+	<!-- window.location.href(可以通过?参数名=参数值传参，可以使用刀乐{}获取本页面的非js代码的变量值)可以与button并用跳转传参 -->
+
+			
 </body>
 </html>
