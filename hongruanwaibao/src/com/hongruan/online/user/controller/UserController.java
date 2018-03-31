@@ -49,4 +49,14 @@ public class UserController {
 		this.userServiceImpl.userSureRegist(userId);
 		return "redirect:/User/showNewUsers.do";
 	}
+	@RequestMapping("/checkLogin")
+	public String checkLogin(@RequestParam String userName, @RequestParam String password, HttpSession session) {
+		boolean isExist = this.userServiceImpl.CheckLogin(userName, password);
+		if(isExist == true) {
+			session.setAttribute("userName", userName);
+			return "user-index";
+		}else {
+			return "user-login";
+		}
+	}
 }

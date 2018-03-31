@@ -18,8 +18,21 @@ public class TaskController {
 	private TaskServiceImpl taskServiceImpl;
 	@RequestMapping("/getTaskHallAllTasksList")
 	public String getTaskHallAllTasksList(HttpSession session) {
-		List<Task> allTasksList = this.taskServiceImpl.getTaskHallAllTasksList();
-		session.setAttribute("allTasksList", allTasksList);
-		return "user-taskHall";
+		String userName = (String)session.getAttribute("userName");
+		if(userName == null) {
+			return "user-login";
+		}else {
+			List<Task> allTasksList = this.taskServiceImpl.getTaskHallAllTasksList();
+			session.setAttribute("allTasksList", allTasksList);
+			return "user-taskHall";
+		}
+	}
+	@RequestMapping("/getTaskDetial")
+	public String getTaskList(Task task, HttpSession session) {
+		int bitUsersSum = this.taskServiceImpl.getSumOfUsersAssociatedWithTask(task);
+		session.setAttribute("task",task);
+		session.setAttribute("bitUsersSum", bitUsersSum);
+		String taskCondition = task.getTaskCondition();
+		return "user-bit-task";
 	}
 }

@@ -6,8 +6,8 @@
 	<head>
 		<title>首页</title>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/static/css/style2.css" />
+		<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/jquery-1.11.1.min.js"></script>
 		<script type="text/javascript">
 			// 获取图片
 		// 
@@ -84,7 +84,7 @@
 					<div class="head">
 						<div class="head1">
 							<br><br><br>
-							<img  src="pic/shangchuan.png">
+							<img  src="${pageContext.request.contextPath }/static/image/shangchuan.png">
 							<img id="preview" />
 							<input type="file" name="file"  value="修改头像" onchange="imgPreview(this)"  />
 						</div>
@@ -98,7 +98,7 @@
 					</div>
 					<div class="hgrd">
 						<br>
-						&nbsp&nbsp&nbsp<img src="pic/hgrad.jpg">
+						&nbsp&nbsp&nbsp<img src="${pageContext.request.contextPath }/static/image/hgrad.jpg">
 						<br>
 						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 						中标任务数： <br><br>
