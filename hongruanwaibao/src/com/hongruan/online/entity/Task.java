@@ -24,19 +24,19 @@ public class Task {
 	private String taskStartTime;
 	private String taskEndTime;
 	private String taskPay;
-	//private Set userSet = new HashSet();
-	//@ManyToMany(mappedBy = "task")
-	/*public Set getUserSet() {
-		return userSet;
-	}
-	public void setUserSet(Set userSet) {
-		this.userSet = userSet;
-	}*/
+	private Set<User> userSet = new HashSet<User>();
 	public String getTaskPay() {
 		return taskPay;
 	}
 	public void setTaskPay(String taskPay) {
 		this.taskPay = taskPay;
+	}
+	@ManyToMany(mappedBy = "taskset")//mappedBy后面的名称一定要与相关联的类里所创建的该类对象引用名或该类集合对象引用名一致，且所有字母都小写
+	public Set<User> getUserSet() {
+		return userSet;
+	}
+	public void setUserSet(Set<User> userSet) {
+		this.userSet = userSet;
 	}
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -32,6 +32,7 @@ public class AdminController {
 		task.setTaskEndTime(taskEndTime);
 		task.setTaskIntroduce(taskIntroduce);
 		task.setTaskStartTime(taskStartTime);
+		task.setTaskCondition("竞标中");
 		this.adminServiceImpl.publishTask(task);
 		
 	}

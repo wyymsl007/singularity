@@ -32,7 +32,7 @@ public class AdminServiceImpl {
 		return false;
 	}
 	public void publishTask(Task task) {
-		this.adminDaoImpl.saveTask(task);
+		this.adminDaoImpl.publishTask(task);
 		
 	}
 }

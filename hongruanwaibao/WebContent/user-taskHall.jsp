@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <html>
 	<head>
 		<title>任务列表</title>
@@ -102,8 +102,26 @@
 				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<h2>搜索结果          </h2>
 			</div>
 			<table>
-				<c:forEach var = "i" varStatus = "v"  items = ""  begin = "0" end = "">
-					
+				<tr>
+					<td>任务ID</td>
+					<td>任务名称</td>
+					<td>任务状态</td>
+					<td>任务发布者</td>
+					<td>任务开始时间</td>
+					<td>任务结束时间</td>
+					<td>任务介绍</td>
+				</tr>
+				<c:forEach var = "i" varStatus = "v"  items = "${allTasksList }"  begin = "0" end = "${allTasksList.size()-1 }">
+					<tr>
+						<td>${i.taskId }</td>
+						<td>${i.taskName }</td>
+						<td>${i.taskCondition }</td>
+						<td>${i.taskAdmin }</td>
+						<td>${i.taskStartTime }</td>
+						<td>${i.taskEndTime }</td>
+						<td>${i.taskPay }</td>
+						<td>${i.taskIntroduce }</td>
+					</tr>
 				</c:forEach>
 			</table>
 		</div>

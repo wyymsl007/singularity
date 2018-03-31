@@ -21,8 +21,9 @@ public class AdminDaoImpl {
 		Query query = this.sessionFactory.getCurrentSession().createQuery(hql);
 		return query.list();
 	}
-	public void saveTask(Task task) {
+	public void publishTask(Task task) {
 		this.sessionFactory.getCurrentSession().save(task);
+		
 	}
 	
 }
