@@ -26,9 +26,9 @@ public class User {
 	private String alipayName;
 	private String personalIntroduction;
 	private boolean isRegist;
-	private Set taskSet = new HashSet();
+	//private Set taskSet = new HashSet();
 	
-    @ManyToMany
+   /* @ManyToMany
     @JoinTable(name="usertask", 
         joinColumns=@JoinColumn(name="userId"),
         inverseJoinColumns=@JoinColumn(name="taskid"))
@@ -37,7 +37,7 @@ public class User {
 	}
 	public void setTaskSet(Set taskSet) {
 		this.taskSet = taskSet;
-	}
+	}*/
 	public boolean isRegist() {
 		return isRegist;
 	}

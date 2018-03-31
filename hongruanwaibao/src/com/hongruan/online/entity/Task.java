@@ -24,14 +24,14 @@ public class Task {
 	private String taskStartTime;
 	private String taskEndTime;
 	private String taskPay;
-	private Set userSet = new HashSet();
-	@ManyToMany(mappedBy = "task")
-	public Set getUserSet() {
+	//private Set userSet = new HashSet();
+	//@ManyToMany(mappedBy = "task")
+	/*public Set getUserSet() {
 		return userSet;
 	}
 	public void setUserSet(Set userSet) {
 		this.userSet = userSet;
-	}
+	}*/
 	public String getTaskPay() {
 		return taskPay;
 	}
