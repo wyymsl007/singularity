@@ -25,4 +25,8 @@ public class TaskDaoImpl {
 		List<Task> allTasksList = q.list();
 		return allTasksList;
 	}
+	public Task getTaskById(Integer taskId) {
+		Task task = this.sessionFactory.getCurrentSession().get(Task.class,new Integer(taskId));
+		return task;
+	}
 }

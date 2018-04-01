@@ -1,14 +1,17 @@
 package com.hongruan.online.user.controller;
 
+import java.util.Iterator;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.hongruan.online.entity.Task;
 import com.hongruan.online.entity.User;
 import com.hongruan.online.user.service.UserServiceImpl;
 
@@ -58,5 +61,24 @@ public class UserController {
 		}else {
 			return "user-login";
 		}
+	}
+	@RequestMapping("/applyBit")
+	public String applyBit(HttpSession session) {
+		Task task = (Task)session.getAttribute("task");
+		String userName = (String)session.getAttribute("userName");
+		User user = this.userServiceImpl.getUserByUserName(userName);
+		Iterator it = user.getTaskset().iterator();
+		while(it.hasNext()) {
+			Task t = (Task)it.next();
+			if(t.getTaskId() == task.getTaskId()) {
+				return "already-bit";
+			}
+		}
+			task.getUserSet().add(user);
+			user.getTaskset().add(task);
+			this.userServiceImpl.userTaskmapped(user, task);
+			return "success-bit";
+		
+
 	}
 }
