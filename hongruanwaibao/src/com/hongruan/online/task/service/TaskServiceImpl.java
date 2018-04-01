@@ -23,7 +23,10 @@ public class TaskServiceImpl {
 	public int getSumOfUsersAssociatedWithTask(Task task) {
 		Integer taskId = task.getTaskId();
 		Task task1 = this.taskDaoImpl.getTaskById(taskId);
-		int sumOfUsersAssociatedWithTask = task1.getUserSet().size();
+		int sumOfUsersAssociatedWithTask = task1.getUserTaskSet().size();
 		return sumOfUsersAssociatedWithTask;
+	}
+	public List<Task> getTaskConditionTasks(String taskCondition){
+		return this.taskDaoImpl.getTaskConditionTasks(taskCondition);
 	}
 }

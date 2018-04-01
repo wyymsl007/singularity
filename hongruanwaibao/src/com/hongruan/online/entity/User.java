@@ -26,24 +26,19 @@ public class User {
 	private String alipayName;
 	private String personalIntroduction;
 	private boolean isRegist;
-	private Set<Task> taskSet = new HashSet<Task>();
-	
-
+	private Set<UserTask> userTaskSet = new HashSet<UserTask>();
+	@OneToMany(mappedBy = "user", targetEntity = UserTask.class)
+	public Set<UserTask> getUserTaskSet() {
+		return userTaskSet;
+	}
+	public void setUserTaskSet(Set<UserTask> userTaskSet) {
+		this.userTaskSet = userTaskSet;
+	}
 	public boolean isRegist() {
 		return isRegist;
 	}
 	public void setRegist(boolean isRegist) {
 		this.isRegist = isRegist;
-	}
-    @ManyToMany
-    @JoinTable(name="usertask", 
-        joinColumns=@JoinColumn(name="userId"),
-        inverseJoinColumns=@JoinColumn(name="taskId"))
-	public Set<Task> getTaskset() {
-		return taskSet;
-	}
-	public void setTaskset(Set<Task> taskSet) {
-		this.taskSet = taskSet;
 	}
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

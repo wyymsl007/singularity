@@ -29,4 +29,10 @@ public class TaskDaoImpl {
 		Task task = this.sessionFactory.getCurrentSession().get(Task.class,new Integer(taskId));
 		return task;
 	}
+	public List<Task> getTaskConditionTasks(String taskCondition){
+		String hql = "from Task where taskCondition = ?";
+		Query q = this.sessionFactory.getCurrentSession().createQuery(hql);
+		q.setParameter(0, taskCondition);
+		return q.list();
+	}
 }
