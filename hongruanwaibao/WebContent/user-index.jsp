@@ -24,7 +24,7 @@
 					<ul>
 						<li><a href="index.html">首页</a></li>
 						<li><a href="${pageContext.request.contextPath }/user-taskHall.jsp">任务大厅</a></li>
-						<li><a href="list.html">任务流程介绍test</a></li>
+						<li><a href="list.html">任务流程介绍</a></li>
 					</ul>
 				</div>
 				
