@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
 import com.hongruan.online.entity.Admin;
+import com.hongruan.online.entity.Task;
 import com.hongruan.online.entity.User;
 
 
@@ -36,5 +37,15 @@ public class UserDaoImpl {
 		String hql = "from User where regist = true";
 		Query query = this.sessionFactory.getCurrentSession().createQuery(hql);
 		return query.list();
+	}
+	public User getUserByUserName(String userName){
+		String  hql = "from User where userName = ?";
+		Query q = this.sessionFactory.getCurrentSession().createQuery(hql);
+		q.setParameter(0, userName);
+		return (User)q.uniqueResult();
+	}
+	public void userTaskmapped(User user, Task task) {
+		this.sessionFactory.getCurrentSession().update(task);
+		this.sessionFactory.getCurrentSession().update(user);
 	}
 }

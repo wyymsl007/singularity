@@ -28,7 +28,7 @@ public class TaskController {
 		}
 	}
 	@RequestMapping("/getTaskDetial")
-	public String getTaskList(Task task, HttpSession session) {
+	public String getTaskDetial(Task task, HttpSession session) {
 		int bitUsersSum = this.taskServiceImpl.getSumOfUsersAssociatedWithTask(task);
 		session.setAttribute("task",task);
 		session.setAttribute("bitUsersSum", bitUsersSum);

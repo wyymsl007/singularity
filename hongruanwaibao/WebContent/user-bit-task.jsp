@@ -230,7 +230,12 @@
           <p><span>项目</span><span>需求描述:${task.taskIntroduce }</span></p>
         </div>
       </div>
-   		<button style = "position:relative;top:550px;left:380px"><font size = "100px" color = "blue">申请竞标</font></button>
+   		<button style = "position:relative;top:550px;left:380px"><font size = "100px" color = "blue" onclick = "applybit()">申请竞标</font></button>
     </div>
   </body>
+  <script type =  "text/javascript">
+  		function applybit(){
+  			window.location.href = "${pageContext.request.contextPath}/User/applyBit.do"
+  		}
+  </script>
 </html>

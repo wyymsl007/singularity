@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.hongruan.online.entity.Admin;
+import com.hongruan.online.entity.Task;
 import com.hongruan.online.entity.User;
 import com.hongruan.online.user.dao.UserDaoImpl;
 
@@ -35,5 +36,11 @@ public class UserServiceImpl {
 			}
 		}
 		return false;
+	}
+	public User getUserByUserName(String userName){
+		return this.userDaoImpl.getUserByUserName(userName);
+	}
+	public void userTaskmapped(User user, Task task) {
+		this.userDaoImpl.userTaskmapped(user, task);
 	}
 }
