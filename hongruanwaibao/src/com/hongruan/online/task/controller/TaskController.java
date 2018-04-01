@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hongruan.online.entity.Task;
 import com.hongruan.online.task.service.TaskServiceImpl;
@@ -35,10 +36,15 @@ public class TaskController {
 		String taskCondition = task.getTaskCondition();
 		return "user-bit-task";
 	}
-	@RequestMapping("/getBitTasks")
+	@RequestMapping("/getBitTasksList")
 	public String getBitTasksList(HttpSession session) {
 		List<Task> bitTasksList = this.taskServiceImpl.getTaskConditionTasks("竞标中");
 		session.setAttribute("bitTasksList", bitTasksList);
 		return "admin-bit";
 	}
+/*	@RequestMapping("/getUsersAssociatedWithTask")
+	public String getUsersAssociatedWithTask(@RequestParam Integer taskId) {
+		Set<User> users =  
+		return "admin-bit-task-detail";
+	}*/
 }

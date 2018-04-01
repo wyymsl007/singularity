@@ -86,7 +86,7 @@
   <!-- content start -->
   <div class="admin-content">
      <div class="am-cf am-padding">
-      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">当前有 <a href>15</a>个任务已完成</strong> / <small>Table</small></div>
+      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">当前有 <a href>${bitTasksList.size() }</a>个任务有新用户投标</strong> / <small>Table</small></div>
     </div>
 
     <div class="am-g">
@@ -123,17 +123,20 @@
           <table class="am-table am-table-striped am-table-hover table-main">
             <thead>
               <tr>
-                <th class="table-check"><input type="checkbox" /></th><th class="table-id">ID</th><th class="table-title">任务名称</th><th class="table-author">提交者</th><th class="table-date">任务完成时间</th><th class="table-set">操作</th>
+                <th class="table-check"><input type="checkbox" /></th><th class="table-id">ID</th><th class="table-title">任务名称</th>
               </tr>
           </thead>
           <tbody>
-             <c:forEach var = "i" varStatus = "v" items = ${bitTasksList} begin = "0" end = "${bitTasksList.size()-1}">
-             	
+             <c:forEach var = "i" varStatus = "v" items = "${bitTasksList}" begin = "0" end = "${bitTasksList.size()-1}">
+             	<tr>
+		              <td><input type="checkbox" /></td>
+		              <td>${i.taskId }</td>
+		              <td><a href="${pageContext.request.contextPath }/Task/getUsersAssociatedWithTask.do?taskId=${i.taskId}">${i.taskName }</a></td>
+            	</tr>
              </c:forEach>
           </tbody>
         </table>
           <div class="am-cf">
-  共 15 条记录
   <div class="am-fr">
     <ul class="am-pagination">
       <li class="am-disabled"><a href="#">«</a></li>
@@ -153,7 +156,7 @@
 
     </div>
   </div>
-  <!-- content end -->
+  <!-- content end -->	
 </div>
 
 <footer>
