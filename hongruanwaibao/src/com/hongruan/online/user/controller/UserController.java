@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hongruan.online.entity.Task;
 import com.hongruan.online.entity.User;
+import com.hongruan.online.entity.UserTask;
 import com.hongruan.online.user.service.UserServiceImpl;
 
 @Controller
@@ -67,16 +68,20 @@ public class UserController {
 		Task task = (Task)session.getAttribute("task");
 		String userName = (String)session.getAttribute("userName");
 		User user = this.userServiceImpl.getUserByUserName(userName);
-		Iterator it = user.getTaskset().iterator();
+		Iterator it = user.getUserTaskSet().iterator();
 		while(it.hasNext()) {
-			Task t = (Task)it.next();
-			if(t.getTaskId() == task.getTaskId()) {
+			UserTask t = (UserTask)it.next();
+			if(t.getTask().getTaskId() == task.getTaskId()) {
 				return "already-bit";
 			}
 		}
-			task.getUserSet().add(user);
-			user.getTaskset().add(task);
-			this.userServiceImpl.userTaskmapped(user, task);
+			UserTask ut = new UserTask();
+			ut.setTaskCondition("竞标中");
+			ut.setTask(task);
+			ut.setUser(user);
+			task.getUserTaskSet().add(ut);
+			user.getUserTaskSet().add(ut);
+			this.userServiceImpl.userTaskmapped(ut,user,task);
 			return "success-bit";
 		
 

@@ -35,4 +35,10 @@ public class TaskController {
 		String taskCondition = task.getTaskCondition();
 		return "user-bit-task";
 	}
+	@RequestMapping("/getBitTasks")
+	public String getBitTasksList(HttpSession session) {
+		List<Task> bitTasksList = this.taskServiceImpl.getTaskConditionTasks("竞标中");
+		session.setAttribute("bitTasksList", bitTasksList);
+		return "admin-bit";
+	}
 }

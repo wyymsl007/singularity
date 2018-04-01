@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -24,19 +25,19 @@ public class Task {
 	private String taskStartTime;
 	private String taskEndTime;
 	private String taskPay;
-	private Set<User> userSet = new HashSet<User>();
+	private Set<UserTask> userTaskSet = new HashSet<UserTask>();
+	@OneToMany(mappedBy = "task", targetEntity = UserTask.class)
+	public Set<UserTask> getUserTaskSet() {
+		return userTaskSet;
+	}
+	public void setUserTaskSet(Set<UserTask> userTaskSet) {
+		this.userTaskSet = userTaskSet;
+	}
 	public String getTaskPay() {
 		return taskPay;
 	}
 	public void setTaskPay(String taskPay) {
 		this.taskPay = taskPay;
-	}
-	@ManyToMany(mappedBy = "taskset")//mappedBy后面的名称一定要与相关联的类里所创建的该类对象引用名或该类集合对象引用名一致，且所有字母都小写
-	public Set<User> getUserSet() {
-		return userSet;
-	}
-	public void setUserSet(Set<User> userSet) {
-		this.userSet = userSet;
 	}
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

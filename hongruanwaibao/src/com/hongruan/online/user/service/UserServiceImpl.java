@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.hongruan.online.entity.Admin;
 import com.hongruan.online.entity.Task;
 import com.hongruan.online.entity.User;
+import com.hongruan.online.entity.UserTask;
 import com.hongruan.online.user.dao.UserDaoImpl;
 
 @Service
@@ -29,7 +30,7 @@ public class UserServiceImpl {
 		this.userDaoImpl.updateUserRegist(userId,true);
 	}
 	public boolean CheckLogin(String userName, String password) {
-		List<User> list = this.userDaoImpl.getAllUsers();
+		List<User> list = this.userDaoImpl.getAllLegalUsers();
 		for(int i = 0; i < list.size(); i++) {
 			if(((User)list.get(i)).getUserName().equals(userName) && ((User)list.get(i)).getPassword().equalsIgnoreCase(password)) {
 				return true;
@@ -40,7 +41,7 @@ public class UserServiceImpl {
 	public User getUserByUserName(String userName){
 		return this.userDaoImpl.getUserByUserName(userName);
 	}
-	public void userTaskmapped(User user, Task task) {
-		this.userDaoImpl.userTaskmapped(user, task);
+	public void userTaskmapped(UserTask ut,User user,Task task) {
+		this.userDaoImpl.userTaskmapped(ut,user,task);
 	}
 }
