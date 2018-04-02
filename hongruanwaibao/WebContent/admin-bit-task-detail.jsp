@@ -99,21 +99,16 @@
             <ul class="am-list admin-content-file">
               <li>
                 <strong><span class="am-icon-upload"></span> 项目名称：</strong>
-                <p>智慧树少儿app</p>
+                <p>${param.taskId }</p>
                 
               </li>
               <li>
                 <strong><span class="am-icon-check"></span> 项目描述：</strong>
-                <p>该项目是为少儿做的一个APP</p>
-                <p>该项目是为少儿做的一个APP</p>
-                <p>该项目是为少儿做的一个APP</p>
-                <p>该项目是为少儿做的一个APP</p>
-                <p>该项目是为少儿做的一个APP</p>
-                <p>该项目是为少儿做的一个APP</p>
+                <p>${param.taskIntroduce }</p>
               </li>
               <li>
                 <strong><span class="am-icon-check"></span> 项目负责人：</strong>
-                <p>XXX</p>
+                <p>${param.taskAdmin }</p>
               </li>
             </ul>
           </div>
@@ -132,14 +127,14 @@
               </tr>
             </thead>
             <tbody>
-	          <%--   <c:forEach>
+	          <   <c:forEach var = "i" varStatus = "v" items = "${bitUsers}" begin = "0" end = "${bitUsers.size()-1}">
 		            <tr>
 		              <td><input type="checkbox" /></td>
-		              <td>1</td>
-		              <td><a href="bidder-deteil.html">aaaaaa</a></td>
+		              <td>${i.userId}</td>
+		              <td><a href="${pageContext.request.contextPath }/admin-bit-user-detail.jsp?userName=${i.userName }&personalIntroduction=${i.personalIntroduction}&userId=${i.userId}&taskId=${param.taskId}">${i.userName }</a></td>
 		              <td>2017.10.1</td>
 		            </tr>
-	            </c:forEach> --%>
+	            </c:forEach> 
             </tbody>
           </table>
           </div>

@@ -131,7 +131,7 @@
              	<tr>
 		              <td><input type="checkbox" /></td>
 		              <td>${i.taskId }</td>
-		              <td><a href="${pageContext.request.contextPath }/Task/getUsersAssociatedWithTask.do?taskId=${i.taskId}">${i.taskName }</a></td>
+		              <td><a href="${pageContext.request.contextPath }/Task/getUsersAssociatedWithTask.do?taskId=${i.taskId}&taskIntroduce=${i.taskIntroduce}&taskAdmin=${i.taskAdmin}">${i.taskName }</a></td>
             	</tr>
              </c:forEach>
           </tbody>

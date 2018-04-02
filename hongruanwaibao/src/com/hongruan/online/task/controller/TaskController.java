@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hongruan.online.entity.Task;
+import com.hongruan.online.entity.User;
 import com.hongruan.online.task.service.TaskServiceImpl;
 
 @Controller
@@ -42,9 +43,15 @@ public class TaskController {
 		session.setAttribute("bitTasksList", bitTasksList);
 		return "admin-bit";
 	}
-/*	@RequestMapping("/getUsersAssociatedWithTask")
-	public String getUsersAssociatedWithTask(@RequestParam Integer taskId) {
-		Set<User> users =  
+	@RequestMapping("/getUsersAssociatedWithTask")
+	public String getUsersAssociatedWithTask(@RequestParam Integer taskId, HttpSession session) {
+		List<User> users = this.taskServiceImpl.getUsersAssociatedWithTask(taskId);
+		session.setAttribute("bitUsers", users);
 		return "admin-bit-task-detail";
-	}*/
+	}
+	@RequestMapping("/agreeBit")
+	public String agreeBit(@RequestParam Integer userId, @RequestParam Integer taskId) {
+		this.taskServiceImpl.agreeBit(userId, taskId);
+		return "admin-examine-bit-success";
+	}
 }

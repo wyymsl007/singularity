@@ -34,12 +34,20 @@ public class TaskServiceImpl {
 	public List<Task> getTaskConditionTasks(String taskCondition){
 		return this.taskDaoImpl.getTaskConditionTasks(taskCondition);
 	}
-/*	public List<User> getUsersAssociatedWithTask(Integer taskId){
+	public List<User> getUsersAssociatedWithTask(Integer taskId){
 		Task task = this.taskDaoImpl.getTaskById(taskId);
 		List<User> users = new ArrayList();
 		 Iterator it = task.getUserTaskSet().iterator();
 		 while(it.hasNext()) {
 			 //根据用户ID得到用户对象
+			 UserTask ut = (UserTask)it.next();
+			 User u = this.taskDaoImpl.getUserById(ut.getUser().getUserId());
+			 users.add(u);
 		 }
-	}*/
+		 return users;
+	}
+	public void agreeBit(Integer userId, Integer taskId) {
+		this.taskDaoImpl.agreeBit(userId, taskId);
+		
+	}
 }
