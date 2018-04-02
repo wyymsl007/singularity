@@ -35,4 +35,25 @@ public class TaskDaoImpl {
 		q.setParameter(0, taskCondition);
 		return q.list();
 	}
+	public User getUserById(Integer userId) {
+		User u = this.sessionFactory.getCurrentSession().get(User.class, userId);
+		return u;
+	}
+	public void agreeBit(Integer userId, Integer taskId) {
+		String hql1 = "update Task set taskCondition = '已选中' where taskId = ?";
+		Query q1  = this.sessionFactory.getCurrentSession().createQuery(hql1);
+		q1.setParameter(0, taskId);
+		q1.executeUpdate();
+		
+		String hql2 = "update UserTask set taskCondition = '竞标失败' where taskId = ?";
+		Query q2  = this.sessionFactory.getCurrentSession().createQuery(hql2);
+		q2.setParameter(0, taskId);
+		q2.executeUpdate();
+		
+		String hql3 = "update UserTask set taskCondition = '已选中' where userId = ? and taskId = ?";
+		Query q3  = this.sessionFactory.getCurrentSession().createQuery(hql3);
+		q3.setParameter(0, userId);
+		q3.setParameter(1, taskId);
+		q3.executeUpdate();
+	}
 }
