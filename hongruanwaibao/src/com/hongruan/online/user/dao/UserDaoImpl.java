@@ -8,10 +8,10 @@ import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
+import com.hongruan.online.entity.Admin;
 import com.hongruan.online.entity.Task;
-import com.hongruan.online.entity.TaskCompleted;
-import com.hongruan.online.entity.TaskEnd;
 import com.hongruan.online.entity.User;
+import com.hongruan.online.entity.UserTask;
 
 
 @Repository
@@ -34,18 +34,22 @@ public class UserDaoImpl {
 		query.setParameter(1,userId);//query.setParameter(n,变量名);代表将前面sql字符串中第n+1个问号换成这个变量名对应变量存储的值
 		int m = query.executeUpdate();
 	}
-	public void aaa() {
-/*		User u = this.sessionFactory.getCurrentSession().get(User.class,new Integer(17));
-		TaskCompleted tc = new TaskCompleted();
-		tc.setAaa("666");
-;
-		tc.setUser(u);
+	public List<User> getAllLegalUsers(){
+		String hql = "from User where regist = true";
+		Query query = this.sessionFactory.getCurrentSession().createQuery(hql);
+		return query.list();
+	}
+	public User getUserByUserName(String userName){
+		String  hql = "from User where userName = ?";
+		Query q = this.sessionFactory.getCurrentSession().createQuery(hql);
+		q.setParameter(0, userName);
+		return (User)q.uniqueResult();
+	}
+	public void userTaskmapped(UserTask ut,User user,Task task) {
+	
+		this.sessionFactory.getCurrentSession().save(ut);
+		this.sessionFactory.getCurrentSession().update(task);
+		this.sessionFactory.getCurrentSession().update(user);
 		
-		this.sessionFactory.getCurrentSession().save(tc);*/
-	/*	TaskCompleted tc   = this.sessionFactory.getCurrentSession().get(TaskCompleted.class,new Integer(20));
-		System.out.println(tc.getAaa()+tc.getUser().getName());*/
-		
-		User u  = this.sessionFactory.getCurrentSession().get(User.class,new Integer(17));
-		System.out.println(u.getName()+u.getTaskCompletedSet().size());
 	}
 }

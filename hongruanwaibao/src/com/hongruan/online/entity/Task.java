@@ -1,5 +1,8 @@
 package com.hongruan.online.entity;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,11 +10,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="task")
-@Inheritance(strategy=InheritanceType.JOINED)
 public class Task {
 	private Integer taskId;
 	private String taskName;
@@ -21,6 +25,14 @@ public class Task {
 	private String taskStartTime;
 	private String taskEndTime;
 	private String taskPay;
+	private Set<UserTask> userTaskSet = new HashSet<UserTask>();
+	@OneToMany(mappedBy = "task", targetEntity = UserTask.class)
+	public Set<UserTask> getUserTaskSet() {
+		return userTaskSet;
+	}
+	public void setUserTaskSet(Set<UserTask> userTaskSet) {
+		this.userTaskSet = userTaskSet;
+	}
 	public String getTaskPay() {
 		return taskPay;
 	}
@@ -71,6 +83,6 @@ public class Task {
 	public void setTaskEndTime(String taskEndTime) {
 		this.taskEndTime = taskEndTime;
 	}
-
+	
 	
 }

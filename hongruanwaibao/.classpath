@@ -39,6 +39,5 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-webmvc-4.3.7.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/standard.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/validation-api-1.1.0.Final.jar"/>
-	<classpathentry kind="lib" path="D:/学习/大三小组项目实训/比赛项目/前端页面/ShopMarkProject/WebContent/WEB-INF/lib/antlr-2.7.7.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

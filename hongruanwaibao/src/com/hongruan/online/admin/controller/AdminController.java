@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hongruan.online.admin.service.AdminServiceImpl;
-import com.hongruan.online.entity.TaskBit;
+import com.hongruan.online.entity.Task;
 
 @Controller
 @RequestMapping("/Admin")
@@ -26,13 +26,14 @@ public class AdminController {
 	}
 	@RequestMapping("/publishTask")
 	public void publishTask(@RequestParam String money, @RequestParam String taskStartTime, @RequestParam String taskEndTime,@RequestParam String taskAdmin,@RequestParam String taskIntroduce) {
-		TaskBit taskBit = new TaskBit();
-		taskBit.setTaskPay(money);
-		taskBit.setTaskAdmin(taskAdmin);
-		taskBit.setTaskEndTime(taskEndTime);
-		taskBit.setTaskIntroduce(taskIntroduce);
-		taskBit.setTaskStartTime(taskStartTime);
-		this.adminServiceImpl.publishTask(taskBit);
+		Task task = new Task();
+		task.setTaskPay(money);
+		task.setTaskAdmin(taskAdmin);
+		task.setTaskEndTime(taskEndTime);
+		task.setTaskIntroduce(taskIntroduce);
+		task.setTaskStartTime(taskStartTime);
+		task.setTaskCondition("竞标中");
+		this.adminServiceImpl.publishTask(task);
 		
 	}
 }

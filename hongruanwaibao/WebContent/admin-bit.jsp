@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <html class="no-js">
 <head>
   <meta charset="utf-8">
@@ -86,7 +86,7 @@
   <!-- content start -->
   <div class="admin-content">
      <div class="am-cf am-padding">
-      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">当前有 <a href>15</a>个任务已完成</strong> / <small>Table</small></div>
+      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">当前有 <a href>${bitTasksList.size() }</a>个任务有新用户投标</strong> / <small>Table</small></div>
     </div>
 
     <div class="am-g">
@@ -123,194 +123,20 @@
           <table class="am-table am-table-striped am-table-hover table-main">
             <thead>
               <tr>
-                <th class="table-check"><input type="checkbox" /></th><th class="table-id">ID</th><th class="table-title">任务名称</th><th class="table-author">提交者</th><th class="table-date">任务完成时间</th><th class="table-set">操作</th>
+                <th class="table-check"><input type="checkbox" /></th><th class="table-id">ID</th><th class="table-title">任务名称</th>
               </tr>
           </thead>
           <tbody>
-             <tr>
-              <td><input type="checkbox" /></td>
-              <td>1</td>
-              <td><a href="finished-project.html">Business management</a></td>
-              <td>测试1号</td>
-              <td>2014年9月4日 7:28:47</td>
-              <td>
-                <div class="am-btn-toolbar">
-                  <div class="am-btn-group am-btn-group-xs">
-                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 审核通过</button>
-                    <button class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 审核不通过</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-             <tr>
-              <td><input type="checkbox" /></td>
-              <td>1</td>
-              <td><a href="finished-project.html">Business management</a></td>
-              <td>测试1号</td>
-              <td>2014年9月4日 7:28:47</td>
-              <td>
-                <div class="am-btn-toolbar">
-                  <div class="am-btn-group am-btn-group-xs">
-                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 审核通过</button>
-                    <button class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 审核不通过</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-             <tr>
-              <td><input type="checkbox" /></td>
-              <td>1</td>
-              <td><a href="finished-project.html">Business management</a></td>
-              <td>测试1号</td>
-              <td>2014年9月4日 7:28:47</td>
-              <td>
-                <div class="am-btn-toolbar">
-                  <div class="am-btn-group am-btn-group-xs">
-                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 审核通过</button>
-                    <button class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 审核不通过</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-             <tr>
-              <td><input type="checkbox" /></td>
-              <td>1</td>
-              <td><a href="finished-project.html">Business management</a></td>
-              <td>测试1号</td>
-              <td>2014年9月4日 7:28:47</td>
-              <td>
-                <div class="am-btn-toolbar">
-                  <div class="am-btn-group am-btn-group-xs">
-                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 审核通过</button>
-                    <button class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 审核不通过</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-             <tr>
-              <td><input type="checkbox" /></td>
-              <td>1</td>
-              <td><a href="finished-project.html">Business management</a></td>
-              <td>测试1号</td>
-              <td>2014年9月4日 7:28:47</td>
-              <td>
-                <div class="am-btn-toolbar">
-                  <div class="am-btn-group am-btn-group-xs">
-                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 审核通过</button>
-                    <button class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 审核不通过</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-             <tr>
-              <td><input type="checkbox" /></td>
-              <td>1</td>
-              <td><a href="finished-project.html">Business management</a></td>
-              <td>测试1号</td>
-              <td>2014年9月4日 7:28:47</td>
-              <td>
-                <div class="am-btn-toolbar">
-                  <div class="am-btn-group am-btn-group-xs">
-                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 审核通过</button>
-                    <button class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 审核不通过</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-             <tr>
-              <td><input type="checkbox" /></td>
-              <td>1</td>
-              <td><a href="finished-project.html">Business management</a></td>
-              <td>测试1号</td>
-              <td>2014年9月4日 7:28:47</td>
-              <td>
-                <div class="am-btn-toolbar">
-                  <div class="am-btn-group am-btn-group-xs">
-                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 审核通过</button>
-                    <button class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 审核不通过</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-             <tr>
-              <td><input type="checkbox" /></td>
-              <td>1</td>
-              <td><a href="finished-project.html">Business management</a></td>
-              <td>测试1号</td>
-              <td>2014年9月4日 7:28:47</td>
-              <td>
-                <div class="am-btn-toolbar">
-                  <div class="am-btn-group am-btn-group-xs">
-                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 审核通过</button>
-                    <button class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 审核不通过</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-             <tr>
-              <td><input type="checkbox" /></td>
-              <td>1</td>
-              <td><a href="finished-project.html">Business management</a></td>
-              <td>测试1号</td>
-              <td>2014年9月4日 7:28:47</td>
-              <td>
-                <div class="am-btn-toolbar">
-                  <div class="am-btn-group am-btn-group-xs">
-                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 审核通过</button>
-                    <button class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 审核不通过</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-             <tr>
-              <td><input type="checkbox" /></td>
-              <td>1</td>
-              <td><a href="finished-project.html">Business management</a></td>
-              <td>测试1号</td>
-              <td>2014年9月4日 7:28:47</td>
-              <td>
-                <div class="am-btn-toolbar">
-                  <div class="am-btn-group am-btn-group-xs">
-                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 审核通过</button>
-                    <button class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 审核不通过</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-             <tr>
-              <td><input type="checkbox" /></td>
-              <td>1</td>
-              <td><a href="finished-project.html">Business management</a></td>
-              <td>测试1号</td>
-              <td>2014年9月4日 7:28:47</td>
-              <td>
-                <div class="am-btn-toolbar">
-                  <div class="am-btn-group am-btn-group-xs">
-                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 审核通过</button>
-                    <button class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 审核不通过</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-             <tr>
-              <td><input type="checkbox" /></td>
-              <td>1</td>
-              <td><a href="finished-project.html">Business management</a></td>
-              <td>测试1号</td>
-              <td>2014年9月4日 7:28:47</td>
-              <td>
-                <div class="am-btn-toolbar">
-                  <div class="am-btn-group am-btn-group-xs">
-                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 审核通过</button>
-                    <button class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 审核不通过</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
+             <c:forEach var = "i" varStatus = "v" items = "${bitTasksList}" begin = "0" end = "${bitTasksList.size()-1}">
+             	<tr>
+		              <td><input type="checkbox" /></td>
+		              <td>${i.taskId }</td>
+		              <td><a href="${pageContext.request.contextPath }/Task/getUsersAssociatedWithTask.do?taskId=${i.taskId}&taskIntroduce=${i.taskIntroduce}&taskAdmin=${i.taskAdmin}">${i.taskName }</a></td>
+            	</tr>
+             </c:forEach>
           </tbody>
         </table>
           <div class="am-cf">
-  共 15 条记录
   <div class="am-fr">
     <ul class="am-pagination">
       <li class="am-disabled"><a href="#">«</a></li>
@@ -330,7 +156,7 @@
 
     </div>
   </div>
-  <!-- content end -->
+  <!-- content end -->	
 </div>
 
 <footer>
