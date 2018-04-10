@@ -1,10 +1,13 @@
 package com.hongruan.online.admin.controller;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.hongruan.online.admin.service.AdminServiceImpl;
 import com.hongruan.online.entity.Task;
@@ -25,7 +28,8 @@ public class AdminController {
 		
 	}
 	@RequestMapping("/publishTask")
-	public void publishTask(@RequestParam String money, @RequestParam String taskStartTime, @RequestParam String taskEndTime,@RequestParam String taskAdmin,@RequestParam String taskIntroduce) {
+	//@ResponseBody
+	public String publishTask(HttpServletRequest request, @RequestParam MultipartFile taskFile, @RequestParam String money, @RequestParam String taskStartTime, @RequestParam String taskEndTime,@RequestParam String taskAdmin,@RequestParam String taskIntroduce) {
 		Task task = new Task();
 		task.setTaskPay(money);
 		task.setTaskAdmin(taskAdmin);
@@ -33,7 +37,8 @@ public class AdminController {
 		task.setTaskIntroduce(taskIntroduce);
 		task.setTaskStartTime(taskStartTime);
 		task.setTaskCondition("竞标中");
-		this.adminServiceImpl.publishTask(task);
-		
+		Integer taskId = this.adminServiceImpl.publishTask(task);
+		this.adminServiceImpl.uploadTaskFile(request,taskFile,taskId);
+		return "admin-publish-task-success";
 	}
 }
