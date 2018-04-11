@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <html class="no-js">
@@ -22,12 +21,9 @@
 <header class="am-topbar admin-header">
   <div class="am-topbar-brand">
     <strong>虹软后台管理</strong> <small></small>
-  </div>
-
+  </div>3
   <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
-
   <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
-
     <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
       <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning">5</span></a></li>
       <li class="am-dropdown" data-am-dropdown>
@@ -116,7 +112,6 @@
         </div>
       </div>
     </div>
-
     <div class="am-g">
       <div class="am-u-sm-12">
         <form class="am-form">
