@@ -20,8 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.hongruan.online.entity.Task;
 import com.hongruan.online.entity.User;
 
-import entity.Goods;
-import entity.Orders_detail;
 
 @Repository
 public class TaskDaoImpl {
