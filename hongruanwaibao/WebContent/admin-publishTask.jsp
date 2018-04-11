@@ -117,7 +117,7 @@
       </div>
 
       <div class="am-u-sm-12 am-u-md-8 am-u-md-pull-4">
-        <form class="am-form am-form-horizontal" method = "post" action = "${pageContext.request.contextPath }/Admin/publishTask.do">
+        <form class="am-form am-form-horizontal" method = "post" action = "${pageContext.request.contextPath }/Admin/publishTask.do" enctype="multipart/form-data">
           <div class="am-form-group">
             <label for="user-name" class="am-u-sm-3 am-form-label">任务类型/ Task </label>
             <div class="am-u-sm-9">
@@ -175,7 +175,7 @@
           <div class="am-form-group">
             <div class="am-u-sm-9 am-u-sm-push-3">
 
-              <input type="file" name="files"/><br/>
+              <input type="file" name="taskFile"/><br/>
 
               <input  type="submit" class="am-btn am-btn-primary" value = "确定提交"  />
             </div>

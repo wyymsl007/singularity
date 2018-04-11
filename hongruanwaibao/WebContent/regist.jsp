@@ -237,7 +237,7 @@
 						
 
 						<div class="div2_right">
-							<img src="pic/timg.jpg">
+							<img src="static/image/timg.jpg">
 							<input style="width:200px" type="text" value="                       示 例">
 						</div>
 						<div class="clear"></div>

@@ -22,7 +22,7 @@ public class UserController {
 	@Resource
 	private UserServiceImpl userServiceImpl;
 	@RequestMapping("/saveUser")
-	public void saveUser(@RequestParam String yourusername,@RequestParam String yourpass,@RequestParam String yourname,@RequestParam String personalIntroduction,@RequestParam String youralipayId,@RequestParam String youralipayName,@RequestParam String yourphoneNumber) {
+	public String saveUser(@RequestParam String yourusername,@RequestParam String yourpass,@RequestParam String yourname,@RequestParam String personalIntroduction,@RequestParam String youralipayId,@RequestParam String youralipayName,@RequestParam String yourphoneNumber) {
 		User user = new User();
 		user.setAlipayId(youralipayId);
 		user.setAlipayName(youralipayName);
@@ -33,7 +33,7 @@ public class UserController {
 		user.setPersonalIntroduction(personalIntroduction);
 		user.setRegist(false);
 		userServiceImpl.saveUser(user);
-		
+		return "user-regist-success";
 		
 		
 	}
@@ -83,7 +83,6 @@ public class UserController {
 			user.getUserTaskSet().add(ut);
 			this.userServiceImpl.userTaskmapped(ut,user,task);
 			return "success-bit";
-		
-
 	}
+	
 }

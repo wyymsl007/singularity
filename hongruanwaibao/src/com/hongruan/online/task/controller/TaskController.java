@@ -35,7 +35,10 @@ public class TaskController {
 		session.setAttribute("task",task);
 		session.setAttribute("bitUsersSum", bitUsersSum);
 		String taskCondition = task.getTaskCondition();
-		return "user-bit-task";
+		if(taskCondition.equals("竞标中")) {
+			return "user-bit-task";
+		}
+		return "user-index";
 	}
 	@RequestMapping("/getBitTasksList")
 	public String getBitTasksList(HttpSession session) {

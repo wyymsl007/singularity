@@ -24,7 +24,10 @@
 	<!-- 文件上传 -->
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
-		p:defaultEncoding="utf-8" />
+		 >
+    	<property name="maxUploadSize" value="10485760000"></property>
+   		<property name="maxInMemorySize" value="40960"></property>
+	</bean>	
 	<!-- 属性文件位置 -->
 	<context:property-placeholder location="classpath:*.properties" />
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
