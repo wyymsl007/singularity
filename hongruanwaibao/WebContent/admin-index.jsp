@@ -45,7 +45,7 @@
   </div>
 </header>
 
-<div class="am-cf admin-main">
+<div class="  am-cf admin-main">
   <!-- sidebar start -->
   <div class="admin-sidebar">
     <ul class="am-list admin-sidebar-list">
