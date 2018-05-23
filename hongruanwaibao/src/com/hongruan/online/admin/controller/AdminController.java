@@ -25,7 +25,6 @@ public class AdminController {
 		}else {
 			return "admin-login";
 		}
-		
 	}
 	@RequestMapping("/publishTask")
 	//@ResponseBody

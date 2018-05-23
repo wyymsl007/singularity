@@ -20,15 +20,9 @@
 				<c:if test = "${empty userName }">
 					<a href="${pageContext.request.contextPath }/user-login.jsp">登录</a></div>
 				</c:if>
-				<select name="tfeestype">	
 				<c:if test = "${!empty userName }">
-					欢迎您，${!empty userName }
-						<option value="1">${userName}</option>
-						<option value="1">注销</option>
-					</select>
+					欢迎您，${userName }
 				</c:if>
-				
-			
 			</div>
 			<!--导航栏和搜索栏-->
 			<div id="nav">
