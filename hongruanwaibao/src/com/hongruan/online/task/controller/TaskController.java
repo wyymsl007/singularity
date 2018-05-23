@@ -3,6 +3,7 @@ package com.hongruan.online.task.controller;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -46,15 +47,30 @@ public class TaskController {
 		session.setAttribute("bitTasksList", bitTasksList);
 		return "admin-bit";
 	}
+	@RequestMapping("/getDoneTasksList")
+	public String getDoneTasksList(HttpSession session) {
+		List<Task> doneTasksList = this.taskServiceImpl.getDoneTasksList("已完成");
+		session.setAttribute("doneTasksList",doneTasksList);
+		return "admin-taskResult";
+	}
 	@RequestMapping("/getUsersAssociatedWithTask")
-	public String getUsersAssociatedWithTask(@RequestParam Integer taskId, HttpSession session) {
-		List<User> users = this.taskServiceImpl.getUsersAssociatedWithTask(taskId);
-		session.setAttribute("bitUsers", users);
-		return "admin-bit-task-detail";
+	public String getUsersAssociatedWithTask(HttpServletRequest request, @RequestParam Integer taskId, HttpSession session) {
+		String lastPage = request.getHeader("referer");
+		if(lastPage.equals("http://localhost:8080/hongruanwaibao/Task/getBitTasksList.do")){
+			List<User> users = this.taskServiceImpl.getUsersAssociatedWithTask(taskId);
+			session.setAttribute("bitUsers", users);
+			return "admin-bit-task-detail";
+		}else {
+			List<User> users = this.taskServiceImpl.getUsersAssociatedWithTask(taskId);
+			session.setAttribute("bitUsers", users);
+			return "admin-taskresult-task-detail";
+		}
+		
 	}
 	@RequestMapping("/agreeBit")
 	public String agreeBit(@RequestParam Integer userId, @RequestParam Integer taskId) {
 		this.taskServiceImpl.agreeBit(userId, taskId);
 		return "admin-examine-bit-success";
 	}
+
 }

@@ -25,6 +25,7 @@ public class Task {
 	private String taskStartTime;
 	private String taskEndTime;
 	private String taskPay;
+	private int taskDonePass;
 	private Set<UserTask> userTaskSet = new HashSet<UserTask>();
 	@OneToMany(mappedBy = "task", targetEntity = UserTask.class)
 	public Set<UserTask> getUserTaskSet() {
@@ -82,6 +83,12 @@ public class Task {
 	}
 	public void setTaskEndTime(String taskEndTime) {
 		this.taskEndTime = taskEndTime;
+	}
+	public int getTaskDonePass() {
+		return taskDonePass;
+	}
+	public void setTaskDonePass(int taskDonePass) {
+		this.taskDonePass = taskDonePass;
 	}
 	
 	

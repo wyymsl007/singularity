@@ -127,14 +127,14 @@
               </tr>
             </thead>
             <tbody>
-	             <c:forEach var = "i" varStatus = "v" items = "${bitUsers}" begin = "0" end = "${bitUsers.size()-1}">
+				<c:forEach var = "i" varStatus = "v" items = "${bitUsers}" begin = "0" end = "${bitUsers.size()-1}">
 		            <tr>
 		              <td><input type="checkbox" /></td>
 		              <td>${i.userId}</td>
 		              <td><a href="${pageContext.request.contextPath }/admin-bit-user-detail.jsp?userName=${i.userName }&personalIntroduction=${i.personalIntroduction}&userId=${i.userId}&taskId=${param.taskId}">${i.userName }</a></td>
 		              <td>2017.10.1</td>
 		            </tr>
-	            </c:forEach> 
+	            </c:forEach>
             </tbody>
           </table>
           </div>
@@ -142,12 +142,24 @@
 
        
       </div>
+      
     </div>
   </div>
+  	            任务完成总进度：
+	            <div class="am-progress am-progress-striped am-progress-sm am-active">
+                 	<div class="am-progress-bar am-progress-bar-success" style="width: 100%">100%</div>
+                </div>
+                
   <!-- content end -->
 
 </div>
-
+	<button onclick = "downloadTaskFile()" style = "position:relative;left:650px;bottom:300px;"><font size = "100px">下载任务文件</font></button>
+<script type = "text/javascript">
+	function downloadTaskFile(){
+			window.location.href = "${pageContext.request.contextPath}/Admin/downloadTaskFile.do?userId=${param.userId}&taskId=${param.taskId}";
+		
+	}
+</script>
 <footer>
   <hr>
   <p class="am-padding-left">© 2000 ArcSoft................</p>

@@ -3,11 +3,15 @@ package com.hongruan.online.admin.service;
 
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -19,6 +23,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import com.hongruan.online.admin.dao.AdminDaoImpl;
 import com.hongruan.online.entity.Admin;
 import com.hongruan.online.entity.Task;
+
 
 
 
@@ -57,15 +62,17 @@ public class AdminServiceImpl {
 		    // 根据 name 获取上传的文件...
 		    MultipartFile taskfile = taskFile;//multipartRequest.getFile(taskFile);  
 		   
-		    //上传后记录的文件... 
-		    File f = new File(request.getSession().getServletContext().getRealPath("/WEB-INF/taskflies"));
+		    //判断路径里有没有这个放任务文件的文件夹. 
+		    File f = new File(request.getSession().getServletContext().getRealPath("/file/Taskfile"));
 		    if(!f.exists()) {
 		    	f.mkdir();
 		    }
-		    File File = new File(request.getSession().getServletContext().getRealPath("/WEB-INF/taskflies/" + taskId + ".zip"));  
+	
+		    File File = new File(request.getSession().getServletContext().getRealPath("/file/Taskfile/" + taskId + ".zip"));  
 	    	
-		    //上传...  
+		     
 		    try {
+		    	//向file路径上传文件(就是先创建一个file空文件)
 		    	taskfile.transferTo(File);
 			} catch (IllegalStateException e) {
 				// TODO Auto-generated catch block

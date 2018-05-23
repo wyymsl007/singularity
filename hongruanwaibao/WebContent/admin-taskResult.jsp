@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <html class="no-js">
 <head>
   <meta charset="utf-8">
@@ -60,8 +61,8 @@
         <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}"><span class="am-icon-file"></span> 审核通知 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
         <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
           <li><a href="${pageContext.request.contextPath}/User/showNewUsers.do" class="am-cf"><span class="am-icon-check"></span> 新用户审核<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
-          <li><a href="${pageContext.request.contextPath}/admin-bit.jsp"><span class="am-icon-puzzle-piece"></span> 竞标审核</a></li>
-          <li><a href="${pageContext.request.contextPath}/admin-taskResult.jsp"><span class="am-icon-bug"></span> 任务结果审核</a></li>
+          <li><a href="${pageContext.request.contextPath}/Task/getBitTasksList.do"><span class="am-icon-puzzle-piece"></span> 竞标审核</a></li>
+          <li><a href="${pageContext.request.contextPath}/Task/getDoneTasksList.do"><span class="am-icon-bug"></span> 任务结果审核</a></li>
         </ul>
       </li>
     </ul>
@@ -126,186 +127,13 @@
               </tr>
           </thead>
           <tbody>
-             <tr>
-              <td><input type="checkbox" /></td>
-              <td>1</td>
-              <td><a href="finished-project.html">Business management</a></td>
-              <td>测试1号</td>
-              <td>2014年9月4日 7:28:47</td>
-              <td>
-                <div class="am-btn-toolbar">
-                  <div class="am-btn-group am-btn-group-xs">
-                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 审核通过</button>
-                    <button class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 审核不通过</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-             <tr>
-              <td><input type="checkbox" /></td>
-              <td>1</td>
-              <td><a href="finished-project.html">Business management</a></td>
-              <td>测试1号</td>
-              <td>2014年9月4日 7:28:47</td>
-              <td>
-                <div class="am-btn-toolbar">
-                  <div class="am-btn-group am-btn-group-xs">
-                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 审核通过</button>
-                    <button class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 审核不通过</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-             <tr>
-              <td><input type="checkbox" /></td>
-              <td>1</td>
-              <td><a href="finished-project.html">Business management</a></td>
-              <td>测试1号</td>
-              <td>2014年9月4日 7:28:47</td>
-              <td>
-                <div class="am-btn-toolbar">
-                  <div class="am-btn-group am-btn-group-xs">
-                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 审核通过</button>
-                    <button class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 审核不通过</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-             <tr>
-              <td><input type="checkbox" /></td>
-              <td>1</td>
-              <td><a href="finished-project.html">Business management</a></td>
-              <td>测试1号</td>
-              <td>2014年9月4日 7:28:47</td>
-              <td>
-                <div class="am-btn-toolbar">
-                  <div class="am-btn-group am-btn-group-xs">
-                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 审核通过</button>
-                    <button class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 审核不通过</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-             <tr>
-              <td><input type="checkbox" /></td>
-              <td>1</td>
-              <td><a href="finished-project.html">Business management</a></td>
-              <td>测试1号</td>
-              <td>2014年9月4日 7:28:47</td>
-              <td>
-                <div class="am-btn-toolbar">
-                  <div class="am-btn-group am-btn-group-xs">
-                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 审核通过</button>
-                    <button class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 审核不通过</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-             <tr>
-              <td><input type="checkbox" /></td>
-              <td>1</td>
-              <td><a href="finished-project.html">Business management</a></td>
-              <td>测试1号</td>
-              <td>2014年9月4日 7:28:47</td>
-              <td>
-                <div class="am-btn-toolbar">
-                  <div class="am-btn-group am-btn-group-xs">
-                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 审核通过</button>
-                    <button class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 审核不通过</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-             <tr>
-              <td><input type="checkbox" /></td>
-              <td>1</td>
-              <td><a href="finished-project.html">Business management</a></td>
-              <td>测试1号</td>
-              <td>2014年9月4日 7:28:47</td>
-              <td>
-                <div class="am-btn-toolbar">
-                  <div class="am-btn-group am-btn-group-xs">
-                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 审核通过</button>
-                    <button class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 审核不通过</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-             <tr>
-              <td><input type="checkbox" /></td>
-              <td>1</td>
-              <td><a href="finished-project.html">Business management</a></td>
-              <td>测试1号</td>
-              <td>2014年9月4日 7:28:47</td>
-              <td>
-                <div class="am-btn-toolbar">
-                  <div class="am-btn-group am-btn-group-xs">
-                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 审核通过</button>
-                    <button class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 审核不通过</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-             <tr>
-              <td><input type="checkbox" /></td>
-              <td>1</td>
-              <td><a href="finished-project.html">Business management</a></td>
-              <td>测试1号</td>
-              <td>2014年9月4日 7:28:47</td>
-              <td>
-                <div class="am-btn-toolbar">
-                  <div class="am-btn-group am-btn-group-xs">
-                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 审核通过</button>
-                    <button class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 审核不通过</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-             <tr>
-              <td><input type="checkbox" /></td>
-              <td>1</td>
-              <td><a href="finished-project.html">Business management</a></td>
-              <td>测试1号</td>
-              <td>2014年9月4日 7:28:47</td>
-              <td>
-                <div class="am-btn-toolbar">
-                  <div class="am-btn-group am-btn-group-xs">
-                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 审核通过</button>
-                    <button class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 审核不通过</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-             <tr>
-              <td><input type="checkbox" /></td>
-              <td>1</td>
-              <td><a href="finished-project.html">Business management</a></td>
-              <td>测试1号</td>
-              <td>2014年9月4日 7:28:47</td>
-              <td>
-                <div class="am-btn-toolbar">
-                  <div class="am-btn-group am-btn-group-xs">
-                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 审核通过</button>
-                    <button class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 审核不通过</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-             <tr>
-              <td><input type="checkbox" /></td>
-              <td>1</td>
-              <td><a href="finished-project.html">Business management</a></td>
-              <td>测试1号</td>
-              <td>2014年9月4日 7:28:47</td>
-              <td>
-                <div class="am-btn-toolbar">
-                  <div class="am-btn-group am-btn-group-xs">
-                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 审核通过</button>
-                    <button class="am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 审核不通过</button>
-                  </div>
-                </div>
-              </td>
-            </tr>
+             <c:forEach var = "i" varStatus = "v" items = "${doneTasksList}" begin = "0" end = "${doneTasksList.size()-1}">
+             	<tr>
+		              <td><input type="checkbox" /></td>
+		              <td>${i.taskId }</td>
+		              <td><a href="${pageContext.request.contextPath }/Task/getUsersAssociatedWithTask.do?taskId=${i.taskId}&taskIntroduce=${i.taskIntroduce}&taskAdmin=${i.taskAdmin}">${i.taskName }</a></td>
+            	</tr>
+             </c:forEach>
           </tbody>
         </table>
           <div class="am-cf">

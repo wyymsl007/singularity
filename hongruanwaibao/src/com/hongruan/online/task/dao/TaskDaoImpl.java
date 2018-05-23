@@ -35,6 +35,12 @@ public class TaskDaoImpl {
 		q.setParameter(0, taskCondition);
 		return q.list();
 	}
+	public List<Task> getDoneTasksList(String taskCondition){
+		String hql = "from Task where taskCondition = ? and taskDonePass = 0";
+		Query q = this.sessionFactory.getCurrentSession().createQuery(hql);
+		q.setParameter(0, taskCondition);
+		return q.list();
+	}
 	public User getUserById(Integer userId) {
 		User u = this.sessionFactory.getCurrentSession().get(User.class, userId);
 		return u;

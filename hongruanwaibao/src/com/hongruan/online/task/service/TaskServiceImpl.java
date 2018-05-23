@@ -34,6 +34,9 @@ public class TaskServiceImpl {
 	public List<Task> getTaskConditionTasks(String taskCondition){
 		return this.taskDaoImpl.getTaskConditionTasks(taskCondition);
 	}
+	public List<Task> getDoneTasksList(String taskCondition){
+		return this.taskDaoImpl.getDoneTasksList(taskCondition);
+	}
 	public List<User> getUsersAssociatedWithTask(Integer taskId){
 		Task task = this.taskDaoImpl.getTaskById(taskId);
 		List<User> users = new ArrayList();
