@@ -15,6 +15,7 @@ public class UserTask {
 	private User user;
 	private Task task;
 	private String taskCondition;
+	private String url;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getId() {

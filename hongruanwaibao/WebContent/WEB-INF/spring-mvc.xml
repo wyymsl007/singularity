@@ -12,7 +12,7 @@
  
 	<!-- 自动扫描且只扫描@Controller ，包名要改-->
 	<!-- 11111111111111 -->
-	<context:component-scan base-package="com.hongruan.online">
+	<context:component-scan base-package="com">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/><!-- 只扫描contorller -->
 		
 	</context:component-scan>

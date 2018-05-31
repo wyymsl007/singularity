@@ -26,6 +26,13 @@ public class User {
 	private String alipayName;
 	private String personalIntroduction;
 	private boolean isRegist;
+	private String imgUrl;
+	public String getImgUrl() {
+		return imgUrl;
+	}
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
 	private Set<UserTask> userTaskSet = new HashSet<UserTask>();
 	@OneToMany(mappedBy = "user", targetEntity = UserTask.class)
 	public Set<UserTask> getUserTaskSet() {

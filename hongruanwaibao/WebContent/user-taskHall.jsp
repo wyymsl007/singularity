@@ -87,15 +87,15 @@
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 					<span>任务情况：</span>
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					<a href="#">招标中</a>
+					<a href="${pageContext.request.contextPath}/Task/getTaskConditionTasks.do?taskCondition=招标中">招标中</a>
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					<a href="#">已选中</a>
+					<a href="${pageContext.request.contextPath}/Task/getTaskConditionTasks.do?taskCondition=已选中">已选中</a>
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					<a href="#">已托管</a>
+					<a href="${pageContext.request.contextPath}/Task/getTaskConditionTasks.do?taskCondition=已托管">已托管</a>
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					<a href="#">已完成</a>
+					<a href="${pageContext.request.contextPath}/Task/getTaskConditionTasks.do?taskCondition=已完成">已完成</a>
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					<a href="#">已结束</a>
+					<a href="${pageContext.request.contextPath}/Task/getTaskConditionTasks.do?taskCondition=已结束">已结束</a>
 				</div>
 			</div>
 			<div id="reseacher">

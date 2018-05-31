@@ -72,5 +72,9 @@ public class TaskController {
 		this.taskServiceImpl.agreeBit(userId, taskId);
 		return "admin-examine-bit-success";
 	}
-
+	@RequestMapping("/getTaskConditionTasks")
+	public String getTaskConditionTasks(@RequestParam String taskCondition) {
+		List<Task> tasksList = this.taskServiceImpl.getTaskConditionTasks(taskCondition);
+		return "user-taskHall";
+	}
 }
