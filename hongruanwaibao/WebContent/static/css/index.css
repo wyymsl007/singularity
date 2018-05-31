@@ -1,0 +1,115 @@
+/******************页面主体****************************/
+#content{
+	margin:5px 0;
+}
+
+#content_left {
+	width:100%;
+	float:left;
+	margin:0;
+
+}
+
+#content_left .read img{
+	width:40px;
+	height: 40px;
+	margin:5px 0 0 5px;
+}
+#content_left .read .tit{
+	border-bottom: 1px solid black;
+	padding-bottom: 10px;
+}
+#content_left .title{
+	font-size: 32px;
+    font-family: '微软雅黑';
+	margin: 5px 0px 0 5px;
+
+}
+#content_left .more a{
+	float: right;
+	margin: 40px 5px 0 0;
+}
+#content_left .more a:hover{
+	color: #ff6666;
+	text-decoration: none;
+}
+
+#content_left .content .pic{
+	margin:5px 0 0 30px;
+	float: left;
+}
+#content_left .content img{
+	width:156px;
+	height: 92px;
+	float: left;
+	
+}
+#content_left .content .ttt{
+	float: left;
+	margin:40px 0 0 20px;
+	font-size: 26px;
+}
+
+#content_left .content li{
+	border-bottom:1px dotted gray;
+	margin: 10px;
+}
+#content_left .content .line{
+	clear: both;
+}
+
+
+
+#content_2_tu{
+	margin-top: 30px;
+	clear: both;
+}
+#content_2_tu .tit img{
+	width:40px;
+	height: 40px;
+	margin:5px 0 0 5px;
+}
+#content_2_tu  .tit{
+	border-bottom: 1px solid black;
+	padding-bottom: 10px;
+
+}
+#content_2_tu .title{
+	font-size: 32px;
+    font-family: '微软雅黑';
+	margin: 5px 0px 0 5px;
+
+}
+#content_2_tu .more a{
+	float: right;
+	margin: 40px 5px 0 0;
+}
+#content_2_tu .more a:hover{
+	color: #ff6666;
+	text-decoration: none;
+}
+#content_2_tu img{
+	width:200px;
+	margin:10px 10px 5px 5px;
+}
+.ppp1{
+	margin: 0 10px 0 50px;
+	float: left;
+}
+
+
+
+
+#content_3_link{
+	margin-top: 80px;
+	clear: both;
+	border-top: 1px solid #000;
+	padding-top: 20px;
+}
+#content_3_link .link{
+	width: 90%;
+	margin: auto;
+}
+#content_3_link .link img{
+	width:32%;
+}

@@ -1,0 +1,35 @@
+#login{
+	margin:5px 5px;
+}
+#login_left{
+	width:32%;
+	float:left;
+	margin: 120px 8px 100px 55px;
+}
+#login_left img{
+	width:185px;
+	height: 185px;
+	float: left;
+}
+#login_left li{
+	border-bottom:1px;
+	margin: 30px;
+}
+#login_right{
+	width:60%;
+	float:right;
+	margin-right: 2px;
+	margin-bottom: 300px;
+	margin-top: 100px;
+}
+#login_right .line{
+	font-size: 20px;
+}
+#login_right img{
+	width:60px;
+	height: 30px;
+}
+#login_right li{
+	border-bottom:3px;
+	margin: 20px;
+}
