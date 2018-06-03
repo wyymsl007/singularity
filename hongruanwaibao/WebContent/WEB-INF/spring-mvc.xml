@@ -17,7 +17,6 @@
 		
 	</context:component-scan>
 	
-	
 	<mvc:annotation-driven/>
 	
 	

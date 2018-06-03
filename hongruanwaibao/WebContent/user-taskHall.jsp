@@ -27,7 +27,6 @@
 						<li><a href="list.html">任务流程介绍</a></li>
 					</ul>
 				</div>
-				
 			</div>
 			<!--大图-->
 			<div id="task_list">
@@ -42,7 +41,7 @@
 				</div>
 				<div class="price">
 					<br>
-					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 					<span>价格：</span>
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 					<a href="#">500以下</a>
@@ -55,12 +54,11 @@
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 					<a href="#">2000以上</a>
 				</div>
-					
 				<div class="number">
 					<br>
-					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					<span>任务量：</span>
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					<span>任务量：</span>
+ 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 					<a href="#">1000以下</a>
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 					<a href="#">1000-1500</a>
@@ -68,8 +66,7 @@
 					<a href="#">1500-2000</a>
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 					<a href="#">2000以上</a>
-				</div>
-					
+				</div>		
 				<div class="finTime">
 					<br>
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -81,7 +78,6 @@
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 					<a href="#">5天以上</a>
 				</div>
-					
 				<div class="situation">
 					<br>
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -89,9 +85,9 @@
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 					<a href="${pageContext.request.contextPath}/Task/getTaskConditionTasks.do?taskCondition=招标中">招标中</a>
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					<a href="${pageContext.request.contextPath}/Task/getTaskConditionTasks.do?taskCondition=已选中">已选中</a>
+					<a href="${pageContext.request.contextPath}/Task/getTaskConditionTasks.do?taskCondition=已选中">已中标</a>
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					<a href="${pageContext.request.contextPath}/Task/getTaskConditionTasks.do?taskCondition=已托管">已托管</a>
+					<a href="${pageContext.request.contextPath}/Task/getTaskConditionTasks.do?taskCondition=已托管">进行中</a>
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 					<a href="${pageContext.request.contextPath}/Task/getTaskConditionTasks.do?taskCondition=已完成">已完成</a>
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
