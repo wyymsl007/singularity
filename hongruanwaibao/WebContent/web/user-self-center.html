@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>个人中心</title>
+    <link rel="stylesheet" type="text/css" href="css/style1.css" />
+    <link rel="stylesheet" type="text/css" href="css/style2.css" />
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript">
+			// 获取图片
+		// 
+		 function imgPreview(fileDom){
+        //判断是否支持FileReader
+        if (window.FileReader) {
+            var reader = new FileReader();
+        } else {
+            alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
+        }
+
+        //获取文件
+        var file = fileDom.files[0];
+        var imageType = /^image\//;
+        //是否是图片
+        if (!imageType.test(file.type)) {
+            alert("请选择图片！");
+            return;
+        }
+        //读取完成
+ 		
+        reader.onload = function(e) {
+            //获取图片dom
+            var img = document.getElementById("preview");
+            //图片路径设置为读取的图片
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+        document.getElementById("div1").innerHTML = "";
+        }
+		</script>
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/flexslider.css"/>
+    <link href="assets/bxslider/jquery.bxslider.css" rel="stylesheet" />
+    <link href="assets/fancybox/source/jquery.fancybox.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/revolution_slider/css/rs-style.css" media="screen">
+    <link rel="stylesheet" href="assets/revolution_slider/rs-plugin/css/settings.css" media="screen">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!--header start-->
+    <header class="header-frontend">
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="img/logo.png"   alt=""/></a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="about.html">公司介绍</a></li>
+<!--                        <li><a href="services.html">新闻中心</a></li>-->
+                  		 <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">新闻中心 <b class=" icon-angle-down"></b></a>
+                            <ul class="dropdown-menu">
+                              <li><a href="news_center.html">公司新闻</a></li>
+                              <li><a href="staggerer.html">公司大事件</a></li>
+
+                           </ul>
+                      	</li>
+                   		<li><a href="user-self-center.html">个人中心</a></li>
+                        <li><a href="case.html">任务大厅</a></li>
+                        <li><a href="ours.html">联系我们</a></li>
+                        <li><input type="text" placeholder=" Search" class="form-control search"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--header end-->
+    <div id="banner">
+			    <div class="re">客服热线：010-1111111</div>
+				<div class="deng"><a href="regist.html">注册</a>&nbsp;
+					<a href="login.html">登录</a></div>
+				
+			</div>
+    <!--大图-->
+			<div class="top" style=" text-align:center;">
+				<h1>个人中心</h1>
+			</div>
+			<div class="down">
+				<div class="down_left">
+					<div class="down_left1">
+						<br><br><br><br>
+						<h1 class="title">我承接的任务</h1>
+					</div>
+					<div class="down_left2">
+						<br><br><br><br>
+						<h1 class="title">我收藏的任务</h1>
+					</div>
+					<div class="down_left3">
+						<br><br><br><br>
+						<h1 class="title">消息中心</h1>
+					</div>
+				</div>
+				<div class="down_right">
+					<div class="head">
+						<div class="head1">
+							<br><br><br>
+							<img  src="img/shangchuan.png">
+							<img id="preview" />
+							<input type="file" name="file"  value="修改头像" onchange="imgPreview(this)"  />
+						</div>
+					</div>
+					<div class="idmess">
+						<br>
+						姓名： <br><br>
+						手机号： <br><br>
+						邮箱： <br><br>
+						注册时间： <br>
+					</div>
+					<div class="hgrd">
+						<br>
+						&nbsp;&nbsp;&nbsp;<img src="img/hgrad.jpg">
+						<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						中标任务数： <br><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						完成任务数：<br><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						好评率：
+					</div>
+				</div>
+			</div>
+			
+
+
+
+<!--footer start-->
+    <footer class="footer">
+        <div class="container">
+            <div class="bottom">
+                       <strong>虹软科技有限公司</strong>  <br/>
+                       电话 : 86-571-88210600 &nbsp;&nbsp;
+                       传真 : 86-571-88210600&nbsp;&nbsp; 
+                       Email : hongruankeji@163.com <br/>
+                       地址: 浙江省杭州市西湖区西斗门路三号天堂软件园23层 &nbsp;&nbsp;
+                       
+
+            </div>
+        </div>
+    </footer>
+    <!--footer end-->
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/hover-dropdown.js"></script>
+    <script defer src="js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="assets/bxslider/jquery.bxslider.js"></script>
+
+    <script type="text/javascript" src="js/jquery.parallax-1.1.3.js"></script>
+
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/link-hover.js"></script>
+
+    <script src="assets/fancybox/source/jquery.fancybox.pack.js"></script>
+
+    <script type="text/javascript" src="assets/revolution_slider/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+    <script type="text/javascript" src="assets/revolution_slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+    <!--common script for all pages-->
+    <script src="js/common-scripts.js"></script>
+
+    <script src="js/revulation-slide.js"></script>
+
+
+  <script>
+
+      RevSlide.initRevolutionSlider();
+
+      $(window).load(function() {
+          $('[data-zlname = reverse-effect]').mateHover({
+              position: 'y-reverse',
+              overlayStyle: 'rolling',
+              overlayBg: '#fff',
+              overlayOpacity: 0.7,
+              overlayEasing: 'easeOutCirc',
+              rollingPosition: 'top',
+              popupEasing: 'easeOutBack',
+              popup2Easing: 'easeOutBack'
+          });
+      });
+
+      $(window).load(function() {
+          $('.flexslider').flexslider({
+              animation: "slide",
+              start: function(slider) {
+                  $('body').removeClass('loading');
+              }
+          });
+      });
+
+      //    fancybox
+      jQuery(".fancybox").fancybox();
+
+
+
+  </script>
+</body>
+</html>
