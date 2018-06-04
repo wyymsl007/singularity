@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="css/style2.css" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/flexslider.css"/>
+    <link href="assets/bxslider/jquery.bxslider.css" rel="stylesheet" />
+    <link href="assets/fancybox/source/jquery.fancybox.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/revolution_slider/css/rs-style.css" media="screen">
+    <link rel="stylesheet" href="assets/revolution_slider/rs-plugin/css/settings.css" media="screen">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+    
+    
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript">
+	    function checkna(){
+			na=form1.yourname.value;
+		  	if( na.length <1 || na.length >12)
+	  		{  	
+	  			divname.innerHTML='<font class="tips_false">长度是1~12个字符</font>';
+	  		     
+	  		}else{  
+	  		    divname.innerHTML='<font class="tips_true">输入正确</font>';
+	  		   
+	  		}  
+	  	
+	  }
+	  //验证密码 
+		function checkpsd1(){    
+			psd1=form1.yourpass.value;  
+			var flagZM=false ;
+			var flagSZ=false ; 
+			var flagQT=false ;
+			if(psd1.length<6 || psd1.length>12){   
+				divpassword1.innerHTML='<font class="tips_false">长度错误</font>';
+			}else
+				{   
+				  for(i=0;i < psd1.length;i++)   
+					{    
+						if((psd1.charAt(i) >= 'A' && psd1.charAt(i)<='Z') || (psd1.charAt(i)>='a' && psd1.charAt(i)<='z')) 
+						{   
+							flagZM=true;
+						}
+						else if(psd1.charAt(i)>='0' && psd1.charAt(i)<='9')    
+						{ 
+							flagSZ=true;
+						}else    
+						{ 
+							flagQT=true;
+						}   
+					}   
+					if(!flagZM||!flagSZ||flagQT){
+					divpassword1.innerHTML='<font class="tips_false">密码必须是字母数字的组合</font>'; 
+					 
+					}else{
+						
+					divpassword1.innerHTML='<font class="tips_true">输入正确</font>';
+					 
+					}  
+				 
+				}	
+		}
+		//验证确认密码 
+		function checkpsd2(){ 
+				if(form1.yourpass.value!=form1.yourpass2.value) { 
+				     divpassword2.innerHTML='<font class="tips_false">您两次输入的密码不一样</font>';
+				} else { 
+				     divpassword2.innerHTML='<font class="tips_true">输入正确</font>';
+				}
+		}
+
+		// 获取图片
+		// 
+		 function imgPreview(fileDom){
+        //判断是否支持FileReader
+        if (window.FileReader) {
+            var reader = new FileReader();
+        } else {
+            alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
+        }
+
+        //获取文件
+        var file = fileDom.files[0];
+        var imageType = /^image\//;
+        //是否是图片
+        if (!imageType.test(file.type)) {
+            alert("请选择图片！");
+            return;
+        }
+        //读取完成
+ 		
+        reader.onload = function(e) {
+            //获取图片dom
+            var img = document.getElementById("preview");
+            //图片路径设置为读取的图片
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+        document.getElementById("div1").innerHTML = "";
+        }
+        ////////////////身份证
+         function imgPreview(fileDom){
+        //判断是否支持FileReader
+        if (window.FileReader) {
+            var reader = new FileReader();
+        } else {
+            alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
+        }
+
+        //获取文件
+        var file = fileDom.files[0];
+        var imageType = /^image\//;
+        //是否是图片
+        if (!imageType.test(file.type)) {
+            alert("请选择图片！");
+            return;
+        }
+        //读取完成
+ 		
+        reader.onload = function(e) {
+            //获取图片dom
+            var img = document.getElementById("preview");
+            //图片路径设置为读取的图片
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+        document.getElementById("div2").innerHTML = "";
+        }
+
+        //手机验证
+        $(function  () {
+	//获取短信验证码
+	var validCode=true;
+	$(".msgs").click (function  () {
+		var time=30;
+		var code=$(this);
+		if (validCode) {
+			validCode=false;
+			code.addClass("msgs1");
+		var t=setInterval(function  () {
+			time--;
+			code.html(time+"秒");
+			if (time==0) {
+				clearInterval(t);
+			code.html("重新获取");
+				validCode=true;
+			code.removeClass("msgs1");
+
+			}
+		},1000)
+		}
+	})
+})
+</script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!--header start-->
+    <header class="header-frontend">
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="img/logo.png"   alt=""/></a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li ><a href="index.html">首页</a></li>
+                        <li><a href="about.html">公司介绍</a></li>
+<!--                        <li><a href="services.html">新闻中心</a></li>-->
+                  		 <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">新闻中心 <b class=" icon-angle-down"></b></a>
+                            <ul class="dropdown-menu">
+                              <li><a href="news_center.html">公司新闻</a></li>
+                              <li><a href="staggerer.html">公司大事件</a></li>
+
+                           </ul>
+                      	</li>
+                   		<li><a href="user-self-center.html">个人中心</a></li>
+                        <li><a href="case.html">任务大厅</a></li>
+                        <li><a href="ours.html">联系我们</a></li>
+                        <li><input type="text" placeholder=" Search" class="form-control search"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--header end-->
+    </div>
+			<!--大图-->
+			<h1 id="reh1">欢迎注册</h1>
+			<div class="contact" >
+		<form name="form1" method="post" action = "User/saveUser.do">
+			<ul>
+				<li>
+					<label>用户名：</label>
+					<input type="text" name="yourusername" placeholder="请输入用户名"  onblur="checkna()" required/><span class="tips" id="divname">长度1~12个字符</span>
+				</li>
+				<li>
+					<label>密码：</label>
+					<input type="password" name="yourpass" placeholder="请输入你的密码" onBlur="checkpsd1()" required/><span class="tips" id="divpassword1">密码必须由字母和数字组成</span>
+				</li>
+				<li>
+					<label>确认密码：</label>
+					<input type="password" name="yourpass2" placeholder="请再次输入你的密码" onBlur="checkpsd2()" required/><span class="tips" id="divpassword2">两次密码需要相同</span>
+				</li>
+				<li>
+					<label>姓名：</label>
+					<input type="text" name="yourname" placeholder="请输入你的真实姓名" " required/><span class="tips" ></span>
+				</li>
+				<li>
+					<label>身份证号：</label>
+					<input type="text"  placeholder="请输入你的身份证号" " required/><span class="tips" ></span>
+				</li>
+				
+				<li>
+					<label>支付宝账号：</label>
+					<input type="text" name="youralipayId" placeholder="请输入你的账号" onBlur="checkmail()" required/><span class="tips" ></span>
+				</li>
+				<li>
+					<label>支付宝真实姓名：</label>
+					<input type="text" name="youralipayName" placeholder="请输入你的姓名" onBlur="checkmail()" required/><span class="tips" ></span>
+				</li>
+				<li>
+					<label>个人简历:</label>
+					<br>
+					<textarea rows="10" cols="79" name = "personalIntroduction"></textarea>
+				</li>
+				<li>
+					<label>个人证书:</label>
+					<br/>
+					<div id='div1'>
+						<!-- <input id='input1' type="file" onchange="imgPreview(this)"> -->
+						<img  src="img/shangchuan.png">
+        			</div>
+
+					<img id="preview" />
+					<input type="file" name="file" onchange="imgPreview(this)" />
+        			
+				</li>
+				<li>
+					<label>手持身份证正面照</label>
+					<br/>
+					<br/>
+					<div class="div2">
+						<div class='div2_left'>
+						<!-- <input id='input1' type="file" onchange="imgPreview(this)"> -->
+							<img  src="img/shangchuan.png">
+							<img id="preview" />
+							<input type="file" name="file" onchange="imgPreview1(this)" />
+        				</div>
+
+						
+
+						<div class="div2_right">
+							<img src="img/timg.jpg">
+							<input style="width:200px" type="text" value="                       示 例">
+						</div>
+						<div class="clear"></div>
+					</div>	
+				</li>
+				<li>
+					<label>电话号：</label>
+					<input type="text" name="yourphoneNumber" placeholder="请输入你的联系方式" onBlur="checkmail()" required/><span class="tips" ></span>
+				</li>
+				<li>
+					<label id="phonela" style="float:left;">验&nbsp;&nbsp;证&nbsp;码</label>
+					<input type="text" class="c_code_msg" style="margin-right: 10px;">
+					<span class="msgs">获取短信验证码</span>
+	
+				</li>
+			    <li>
+			    	<br/><br/><br/><br/><br/><br/><br/><br/>
+					<b class="btn"><input type="submit" value="立即注册"/>
+				</li>
+			</ul>
+		</form>
+	</div>
+	<div style="text-align:center;">
+			
+		</div>
+    
+    
+    <!--footer start-->
+    <footer class="footer">
+        <div class="container">
+            <div class="bottom">
+                       <strong>虹软科技有限公司</strong>  <br/>
+                       电话 : 86-571-88210600 &nbsp;&nbsp;
+                       传真 : 86-571-88210600&nbsp;&nbsp; 
+                       Email : hongruankeji@163.com <br/>
+                       地址: 浙江省杭州市西湖区西斗门路三号天堂软件园23层 &nbsp;&nbsp;
+                       
+
+            </div>
+        </div>
+    </footer>
+    <!--footer end-->
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/hover-dropdown.js"></script>
+    <script defer src="js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="assets/bxslider/jquery.bxslider.js"></script>
+
+    <script type="text/javascript" src="js/jquery.parallax-1.1.3.js"></script>
+
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/link-hover.js"></script>
+
+    <script src="assets/fancybox/source/jquery.fancybox.pack.js"></script>
+
+    <script type="text/javascript" src="assets/revolution_slider/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+    <script type="text/javascript" src="assets/revolution_slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+    <!--common script for all pages-->
+    <script src="js/common-scripts.js"></script>
+
+    <script src="js/revulation-slide.js"></script>
+
+
+  <script>
+
+      RevSlide.initRevolutionSlider();
+
+      $(window).load(function() {
+          $('[data-zlname = reverse-effect]').mateHover({
+              position: 'y-reverse',
+              overlayStyle: 'rolling',
+              overlayBg: '#fff',
+              overlayOpacity: 0.7,
+              overlayEasing: 'easeOutCirc',
+              rollingPosition: 'top',
+              popupEasing: 'easeOutBack',
+              popup2Easing: 'easeOutBack'
+          });
+      });
+
+      $(window).load(function() {
+          $('.flexslider').flexslider({
+              animation: "slide",
+              start: function(slider) {
+                  $('body').removeClass('loading');
+              }
+          });
+      });
+
+      //    fancybox
+      jQuery(".fancybox").fancybox();
+
+
+
+  </script>
+    
+
+</body>
+</html>
